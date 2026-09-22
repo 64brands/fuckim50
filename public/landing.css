@@ -146,7 +146,7 @@ a:focus-visible {
 }
 
 .artboard--mobile .poster-nav .btn-things {
-  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 370 / 1030) / 2)) translateY(5px) rotate(-2.2deg) scale(0.8);
+  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 370 / 1030) / 2)) translateY(12px) rotate(-2.2deg) scale(0.8);
 }
 
 .artboard--mobile .poster-nav .btn-merch {
