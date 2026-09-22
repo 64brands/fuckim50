@@ -85,9 +85,9 @@ a:focus-visible {
 }
 
 .artboard--mobile .logo {
-  left: calc((100% - 78.165%) / 2);
+  left: calc((100% - 85.9815%) / 2);
   top: 0;
-  width: 78.165%;
+  width: 85.9815%;
   z-index: 6;
 }
 
@@ -138,15 +138,15 @@ a:focus-visible {
 }
 
 .artboard--mobile .poster-nav .btn-episodes {
-  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 337 / 1032) / 2 + 5px)) translateY(52px) rotate(-5.2deg) scale(0.72);
+  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 337 / 1032) / 2 + 5px)) translateY(64px) rotate(-5.2deg) scale(0.72);
 }
 
 .artboard--mobile .poster-nav .btn-what-the {
-  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 347 / 1015) / 2 + 5px)) translateY(38px) rotate(-5.2deg) scale(0.72);
+  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 347 / 1015) / 2 + 5px)) translateY(46px) rotate(-5.2deg) scale(0.72);
 }
 
 .artboard--mobile .poster-nav .btn-things {
-  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 370 / 1030) / 2 + 7px)) translateY(24px) rotate(-2.2deg) scale(0.72);
+  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 370 / 1030) / 2 + 7px)) translateY(27px) rotate(-2.2deg) scale(0.72);
 }
 
 .artboard--mobile .poster-nav .btn-merch {
