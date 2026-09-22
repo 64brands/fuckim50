@@ -150,7 +150,7 @@ img {
 }
 
 .site-menu a[href="/contact/"] {
-  transform: scale(0.8075);
+  transform: rotate(-7deg) scale(0.8075);
   transform-origin: center center;
   margin-top: 5px;
 }
