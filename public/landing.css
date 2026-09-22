@@ -132,7 +132,7 @@ a:focus-visible {
   left: auto;
   top: auto;
   width: 100%;
-  transform: rotate(-5.2deg);
+  transform: rotate(-5.2deg) scale(0.8);
   transform-origin: center center;
   z-index: 5;
 }
@@ -142,7 +142,7 @@ a:focus-visible {
   width: 80%;
   left: 10%;
   top: 43cqh;
-  transform: rotate(-5.2deg);
+  transform: rotate(-5.2deg) scale(0.8);
   transform-origin: center center;
 }
 
