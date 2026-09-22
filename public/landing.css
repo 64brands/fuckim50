@@ -157,8 +157,8 @@ a:focus-visible {
   position: absolute;
   width: 80%;
   left: 10%;
-  top: calc(43cqh + 40px);
-  transform: translateX(calc(35.5vw - 10px - (0.677202 * 52vw + 0.061630 * 52vw * 255 / 862) / 2)) rotate(-5.2deg) scale(0.68);
+  top: calc(43cqh + 55px);
+  transform: translateX(calc(35.5vw - 20px - (0.677202 * 52vw + 0.061630 * 52vw * 255 / 862) / 2)) rotate(-5.2deg) scale(0.68);
   transform-origin: center center;
 }
 
