@@ -132,25 +132,25 @@ a:focus-visible {
   left: auto;
   top: auto;
   width: 100%;
-  transform: rotate(-5.2deg) scale(0.8);
+  transform: rotate(-5.2deg) scale(0.72);
   transform-origin: center center;
   z-index: 5;
 }
 
 .artboard--mobile .poster-nav .btn-episodes {
-  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 337 / 1032) / 2)) translateY(37px) rotate(-5.2deg) scale(0.8);
+  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 337 / 1032) / 2)) translateY(37px) rotate(-5.2deg) scale(0.72);
 }
 
 .artboard--mobile .poster-nav .btn-what-the {
-  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 347 / 1015) / 2)) translateY(28px) rotate(-5.2deg) scale(0.8);
+  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 347 / 1015) / 2)) translateY(28px) rotate(-5.2deg) scale(0.72);
 }
 
 .artboard--mobile .poster-nav .btn-things {
-  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 370 / 1030) / 2)) translateY(19px) rotate(-2.2deg) scale(0.8);
+  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 370 / 1030) / 2)) translateY(19px) rotate(-2.2deg) scale(0.72);
 }
 
 .artboard--mobile .poster-nav .btn-merch {
-  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 375 / 1037) / 2)) translateY(3px) rotate(-5.2deg) scale(0.8);
+  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 375 / 1037) / 2)) translateY(3px) rotate(-5.2deg) scale(0.72);
 }
 
 .artboard--mobile .poster-nav .btn-episodes img,
@@ -165,7 +165,7 @@ a:focus-visible {
   width: 80%;
   left: 10%;
   top: calc(43cqh + 55px);
-  transform: translateX(calc(35.5vw - 20px - (0.677202 * 52vw + 0.061630 * 52vw * 255 / 862) / 2)) rotate(-5.2deg) scale(0.68);
+  transform: translateX(calc(35.5vw - 20px - (0.677202 * 52vw + 0.061630 * 52vw * 255 / 862) / 2)) rotate(-5.2deg) scale(0.612);
   transform-origin: center center;
 }
 
