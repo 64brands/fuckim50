@@ -80,36 +80,31 @@ a:focus-visible {
 }
 
 .artboard--mobile {
-  width: min(100vw, calc(100dvh * 488 / 868));
-  height: min(100dvh, calc(100vw * 868 / 488));
+  width: 100vw;
+  height: 100dvh;
 }
 
 .artboard--mobile .logo {
-  left: 1.5%;
-  top: 0.4%;
-  width: 96.5%;
+  left: 6.6%;
+  top: 0;
+  width: 86.85%;
   z-index: 6;
 }
 
 .artboard--mobile .paul {
-  left: -12%;
-  top: 21.2%;
-  height: 80%;
-  width: auto;
+  left: 2%;
+  top: 29%;
+  width: 46%;
+  height: auto;
+  object-fit: contain;
+  object-position: left top;
   z-index: 2;
 }
 
-.artboard--mobile .lines {
-  left: 0.4%;
-  top: 32.4%;
-  width: 13.2%;
-  z-index: 3;
-}
-
 .artboard--mobile .headline {
-  left: 49%;
-  top: 31%;
-  width: 49.5%;
+  left: 52%;
+  top: 29%;
+  width: 44%;
   z-index: 4;
 }
 
@@ -120,50 +115,24 @@ a:focus-visible {
 }
 
 .artboard--mobile .poster-nav {
-  position: static;
+  position: absolute;
+  left: 52%;
+  width: 44%;
+  top: 45.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.6cqh;
+  z-index: 5;
 }
 
-.artboard--mobile .btn-episodes {
-  left: 56.5%;
-  top: 51.6%;
-  width: 41%;
+.artboard--mobile .poster-nav .btn {
+  position: relative;
+  left: auto;
+  top: auto;
+  width: 88%;
   transform: rotate(5.5deg);
-  transform-origin: center center;
-  z-index: 5;
-}
-
-.artboard--mobile .btn-what-the {
-  left: 55.5%;
-  top: 59.6%;
-  width: 42%;
-  transform: rotate(-8deg);
-  transform-origin: center center;
-  z-index: 5;
-}
-
-.artboard--mobile .btn-things {
-  left: 56%;
-  top: 68.4%;
-  width: 41.5%;
-  transform: rotate(3deg);
-  transform-origin: center center;
-  z-index: 5;
-}
-
-.artboard--mobile .btn-merch {
-  left: 55.8%;
-  top: 76.6%;
-  width: 42%;
-  transform: rotate(-4.5deg);
-  transform-origin: center center;
-  z-index: 5;
-}
-
-.artboard--mobile .btn-contact {
-  left: 61%;
-  top: 85.8%;
-  width: 33%;
-  transform: rotate(-7deg);
   transform-origin: center center;
   z-index: 5;
 }
