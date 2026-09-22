@@ -103,7 +103,7 @@ a:focus-visible {
 
 .artboard--mobile .headline {
   left: calc(100% - 20px - 50.16% * 810 / 822);
-  top: calc(19% + 65px);
+  top: calc(19% + 73px);
   width: 50.16%;
   z-index: 3;
 }
@@ -138,19 +138,19 @@ a:focus-visible {
 }
 
 .artboard--mobile .poster-nav .btn-episodes {
-  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 337 / 1032) / 2 + 5px)) translateY(64px) rotate(-5.2deg) scale(0.72);
+  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 337 / 1032) / 2 + 5px)) translateY(70px) rotate(-5.2deg) scale(0.72);
 }
 
 .artboard--mobile .poster-nav .btn-what-the {
-  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 347 / 1015) / 2 + 5px)) translateY(46px) rotate(-5.2deg) scale(0.72);
+  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 347 / 1015) / 2 + 5px)) translateY(49px) rotate(-5.2deg) scale(0.72);
 }
 
 .artboard--mobile .poster-nav .btn-things {
-  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 370 / 1030) / 2 + 7px)) translateY(27px) rotate(-2.2deg) scale(0.72);
+  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 370 / 1030) / 2 + 7px)) translateY(30px) rotate(-2.2deg) scale(0.72);
 }
 
 .artboard--mobile .poster-nav .btn-merch {
-  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 375 / 1037) / 2 + 10px)) translateY(3px) rotate(-5.2deg) scale(0.72);
+  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 375 / 1037) / 2 + 10px)) translateY(6px) rotate(-5.2deg) scale(0.72);
 }
 
 .artboard--mobile .poster-nav .btn-episodes img,
@@ -165,7 +165,7 @@ a:focus-visible {
   width: 80%;
   left: 10%;
   top: calc(43cqh + 55px);
-  transform: translateX(calc(35.5vw - 20px - (0.677202 * 52vw + 0.061630 * 52vw * 255 / 862) / 2)) rotate(-5.2deg) scale(0.612);
+  transform: translateX(calc(35.5vw - 20px - (0.677202 * 52vw + 0.061630 * 52vw * 255 / 862) / 2)) rotate(-5.2deg) scale(0.5814);
   transform-origin: center center;
 }
 
