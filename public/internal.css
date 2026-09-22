@@ -78,3 +78,53 @@ img {
   width: 100%;
   height: auto;
 }
+
+/* Brief 02C: keep header above the full-blue menu layer. */
+.internal-header {
+  z-index: 2;
+}
+
+.site-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin: 0;
+  background: var(--fi50-blue);
+  padding-top: calc(78px + env(safe-area-inset-top, 0px));
+  padding-right: calc(30px + env(safe-area-inset-right, 0px));
+  padding-bottom: calc(30px + env(safe-area-inset-bottom, 0px));
+  padding-left: calc(30px + env(safe-area-inset-left, 0px));
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.site-menu[hidden] {
+  display: none;
+}
+
+.site-menu a {
+  display: block;
+  width: min(330px, 100%);
+  line-height: 0;
+}
+
+.site-menu a:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.site-menu a img {
+  width: 100%;
+  height: auto;
+}
+
+html.menu-open,
+html.menu-open body {
+  overflow: hidden;
+  overscroll-behavior: none;
+}

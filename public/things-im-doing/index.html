@@ -17,12 +17,41 @@
           height="2184"
         />
       </a>
-      <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false">
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="site-menu"
+      >
         <img src="/assets/Hamburger-Menu.png" alt="" width="626" height="535" />
       </button>
     </header>
+    <nav id="site-menu" class="site-menu" hidden aria-label="Menu">
+      <a href="/episodes/">
+        <img src="/assets/episodes-button.svg" alt="Episodes" width="1032" height="337" />
+      </a>
+      <a href="/what-the/">
+        <img src="/assets/what-the-button.svg" alt="What The?" width="1015" height="347" />
+      </a>
+      <a href="/things-im-doing/">
+        <img
+          src="/assets/things-im-doing-button.svg"
+          alt="Things I'm Doing"
+          width="1030"
+          height="370"
+        />
+      </a>
+      <a href="/merch/">
+        <img src="/assets/merch-button.svg" alt="Merch" width="1037" height="375" />
+      </a>
+      <a href="/contact/">
+        <img src="/assets/contact-button.svg" alt="Contact" width="862" height="255" />
+      </a>
+    </nav>
     <h1 class="page-title">
       <img src="/assets/Things-Im-Doing-Title.png" alt="Things I'm Doing" />
     </h1>
+    <script src="/internal-menu.js" defer></script>
   </body>
 </html>
