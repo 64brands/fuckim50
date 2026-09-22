@@ -87,7 +87,7 @@ a:focus-visible {
 .artboard--mobile .logo {
   left: 6.6%;
   top: 0;
-  width: 86.85%;
+  width: 78.165%;
   z-index: 6;
 }
 
@@ -135,6 +135,15 @@ a:focus-visible {
   transform: rotate(-5.2deg);
   transform-origin: center center;
   z-index: 5;
+}
+
+.artboard--mobile .poster-nav .btn-contact {
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  top: 43cqh;
+  transform: rotate(-5.2deg);
+  transform-origin: center center;
 }
 
 /* -------------------------------------------------------------------------- */
