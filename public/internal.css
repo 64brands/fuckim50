@@ -32,7 +32,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding-top: env(safe-area-inset-top, 0px);
+  padding-top: calc(10px + env(safe-area-inset-top, 0px));
   padding-left: calc(10px + env(safe-area-inset-left, 0px));
   padding-right: calc(10px + env(safe-area-inset-right, 0px));
 }
