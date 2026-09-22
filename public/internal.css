@@ -1,0 +1,80 @@
+/* F*CK! I'M 50 — mobile internal page shell (Brief 02A).
+   Landing page CSS is not used here. */
+
+:root {
+  --fi50-blue: #017efe;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--fi50-blue);
+  min-height: 100%;
+  min-height: 100dvh;
+}
+
+img {
+  display: block;
+  max-width: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.internal-header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-left: calc(10px + env(safe-area-inset-left, 0px));
+  padding-right: calc(10px + env(safe-area-inset-right, 0px));
+}
+
+.home-asterisk,
+.menu-toggle {
+  display: block;
+  line-height: 0;
+}
+
+.home-asterisk:focus-visible,
+.menu-toggle:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.menu-toggle {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.home-asterisk img {
+  height: 48px;
+  width: auto;
+}
+
+.menu-toggle img {
+  height: 48px;
+  width: auto;
+}
+
+.page-title {
+  margin: 20px auto 0;
+  max-width: min(330px, calc(100vw - 60px));
+  padding: 0;
+}
+
+.page-title img {
+  width: 100%;
+  height: auto;
+}
