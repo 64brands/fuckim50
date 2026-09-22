@@ -79,28 +79,28 @@ img {
   height: auto;
 }
 
-/* Brief 02C: keep header above the full-blue menu layer. */
+/* Brief 02D: header stays above the pop-up panel. */
 .internal-header {
   z-index: 2;
 }
 
 .site-menu {
   position: fixed;
-  inset: 0;
   z-index: 1;
+  top: calc(70px + env(safe-area-inset-top, 0px));
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
+  width: 280px;
   margin: 0;
-  background: var(--fi50-blue);
-  padding-top: calc(78px + env(safe-area-inset-top, 0px));
-  padding-right: calc(30px + env(safe-area-inset-right, 0px));
-  padding-bottom: calc(30px + env(safe-area-inset-bottom, 0px));
-  padding-left: calc(30px + env(safe-area-inset-left, 0px));
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+  padding: 16px 0;
+  border: 0;
+  border-radius: 18px;
+  background: rgba(0, 24, 72, 0.4);
+  overflow: visible;
 }
 
 .site-menu[hidden] {
@@ -109,7 +109,8 @@ img {
 
 .site-menu a {
   display: block;
-  width: min(330px, 100%);
+  width: 200px;
+  max-width: 200px;
   line-height: 0;
 }
 
@@ -121,10 +122,4 @@ img {
 .site-menu a img {
   width: 100%;
   height: auto;
-}
-
-html.menu-open,
-html.menu-open body {
-  overflow: hidden;
-  overscroll-behavior: none;
 }
