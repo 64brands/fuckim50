@@ -138,19 +138,26 @@ a:focus-visible {
 }
 
 .artboard--mobile .poster-nav .btn-episodes {
-  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 337 / 1032) / 2)) translateY(27px) rotate(-5.2deg) scale(0.8);
+  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 337 / 1032) / 2)) translateY(37px) rotate(-5.2deg) scale(0.8);
 }
 
 .artboard--mobile .poster-nav .btn-what-the {
-  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 347 / 1015) / 2)) translateY(20px) rotate(-5.2deg) scale(0.8);
+  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 347 / 1015) / 2)) translateY(28px) rotate(-5.2deg) scale(0.8);
 }
 
 .artboard--mobile .poster-nav .btn-things {
-  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 370 / 1030) / 2)) translateY(12px) rotate(-2.2deg) scale(0.8);
+  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 370 / 1030) / 2)) translateY(19px) rotate(-2.2deg) scale(0.8);
 }
 
 .artboard--mobile .poster-nav .btn-merch {
-  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 375 / 1037) / 2)) rotate(-5.2deg) scale(0.8);
+  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 375 / 1037) / 2)) translateY(3px) rotate(-5.2deg) scale(0.8);
+}
+
+.artboard--mobile .poster-nav .btn-episodes img,
+.artboard--mobile .poster-nav .btn-what-the img,
+.artboard--mobile .poster-nav .btn-things img,
+.artboard--mobile .poster-nav .btn-merch img {
+  filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.18));
 }
 
 .artboard--mobile .poster-nav .btn-contact {
