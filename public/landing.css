@@ -102,9 +102,9 @@ a:focus-visible {
 }
 
 .artboard--mobile .headline {
-  left: calc(100% - 20px - 66% * 810 / 822);
+  left: calc(100% - 20px - 52.8% * 810 / 822);
   top: calc(19% + 50px);
-  width: 66%;
+  width: 52.8%;
   z-index: 3;
 }
 
