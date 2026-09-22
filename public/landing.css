@@ -93,8 +93,8 @@ a:focus-visible {
 
 .artboard--mobile .paul {
   left: calc(74.1% * -18 / 512);
-  top: calc(20% + 0.1 * 74.1vw * 1010 / 512);
-  width: 66.69%;
+  top: calc(20% + 0.1 * 74.1vw * 1010 / 512 - 0.05 * 66.69vw * 1010 / 512);
+  width: 70.0245%;
   height: auto;
   object-fit: contain;
   object-position: left bottom;
@@ -102,9 +102,9 @@ a:focus-visible {
 }
 
 .artboard--mobile .headline {
-  left: calc(100% - 20px - 52.8% * 810 / 822);
-  top: calc(19% + 50px);
-  width: 52.8%;
+  left: calc(100% - 20px - 50.16% * 810 / 822);
+  top: calc(19% + 65px);
+  width: 50.16%;
   z-index: 3;
 }
 
@@ -138,19 +138,19 @@ a:focus-visible {
 }
 
 .artboard--mobile .poster-nav .btn-episodes {
-  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 337 / 1032) / 2)) translateY(37px) rotate(-5.2deg) scale(0.72);
+  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 337 / 1032) / 2 + 5px)) translateY(52px) rotate(-5.2deg) scale(0.72);
 }
 
 .artboard--mobile .poster-nav .btn-what-the {
-  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 347 / 1015) / 2)) translateY(28px) rotate(-5.2deg) scale(0.72);
+  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 347 / 1015) / 2 + 5px)) translateY(38px) rotate(-5.2deg) scale(0.72);
 }
 
 .artboard--mobile .poster-nav .btn-things {
-  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 370 / 1030) / 2)) translateY(19px) rotate(-2.2deg) scale(0.72);
+  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 370 / 1030) / 2 + 7px)) translateY(24px) rotate(-2.2deg) scale(0.72);
 }
 
 .artboard--mobile .poster-nav .btn-merch {
-  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 375 / 1037) / 2)) translateY(3px) rotate(-5.2deg) scale(0.72);
+  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 375 / 1037) / 2 + 10px)) translateY(3px) rotate(-5.2deg) scale(0.72);
 }
 
 .artboard--mobile .poster-nav .btn-episodes img,
