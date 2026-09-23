@@ -4,6 +4,9 @@
   "compatibility_date": "2026-09-21",
   "workers_dev": true,
   "preview_urls": true,
+  "routes": [
+    { "pattern": "fuckim50.show", "custom_domain": true }
+  ],
   "assets": {
     "directory": "./public",
     "binding": "ASSETS",
