@@ -52,6 +52,65 @@
     <h1 class="page-title">
       <img src="/assets/Contact-Title.png" alt="Contact" />
     </h1>
+    <form class="contact-form" id="contact-form" novalidate>
+      <label class="contact-field">
+        <span class="contact-visually-hidden">Subject</span>
+        <select name="subject" required>
+          <option value="" disabled selected>Subject</option>
+          <option value="Become a Guest">Become a Guest</option>
+          <option value="General Comments">General Comments</option>
+          <option value="Commercial Partnerships">Commercial Partnerships</option>
+        </select>
+      </label>
+      <label class="contact-field">
+        <span class="contact-visually-hidden">Your Name</span>
+        <input type="text" name="name" placeholder="Your Name" autocomplete="name" required />
+      </label>
+      <label class="contact-field">
+        <span class="contact-visually-hidden">Email Address</span>
+        <input
+          type="email"
+          name="email"
+          placeholder="Email Address"
+          autocomplete="email"
+          inputmode="email"
+          required
+        />
+      </label>
+      <div class="contact-phone">
+        <label class="contact-field contact-field--dial">
+          <span class="contact-visually-hidden">Country dial code</span>
+          <select name="dial" required>
+            <option value="" disabled selected>Code</option>
+          </select>
+        </label>
+        <label class="contact-field contact-field--number">
+          <span class="contact-visually-hidden">Phone Number</span>
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Phone Number"
+            autocomplete="tel-national"
+            inputmode="tel"
+            required
+          />
+        </label>
+      </div>
+      <label class="contact-field">
+        <span class="contact-visually-hidden">Your Message</span>
+        <textarea name="message" placeholder="Your Message..." rows="6" required></textarea>
+      </label>
+      <p class="contact-word-count" aria-live="polite">0 / 300 words</p>
+      <div class="contact-hp" aria-hidden="true">
+        <label>
+          Website
+          <input type="text" name="website" tabindex="-1" autocomplete="off" />
+        </label>
+      </div>
+      <button class="contact-send" type="submit">SEND MESSAGE</button>
+      <p class="contact-status" hidden></p>
+    </form>
     <script src="/internal-menu.js" defer></script>
+    <script src="/contact-form.js" defer></script>
   </body>
 </html>

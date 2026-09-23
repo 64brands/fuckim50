@@ -222,3 +222,148 @@ img {
     left: 24px;
   }
 }
+
+/* Brief 05: mobile Contact form only. Locked shell rules stay above. */
+.contact-form {
+  display: none;
+}
+
+@media (max-width: 899px) {
+  .contact-form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 48px);
+    max-width: 342px;
+    margin: 28px auto 40px;
+    gap: 14px;
+  }
+
+  .contact-visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .contact-field,
+  .contact-phone {
+    display: block;
+    margin: 0;
+  }
+
+  .contact-phone {
+    display: flex;
+    gap: 10px;
+  }
+
+  .contact-field--dial {
+    width: 112px;
+    flex: 0 0 112px;
+  }
+
+  .contact-field--number {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    display: block;
+    width: 100%;
+    height: 48px;
+    margin: 0;
+    padding: 0 14px;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+    background: rgba(0, 24, 72, 0.28);
+    color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.3;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  .contact-form select {
+    padding-right: 32px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='white' d='M1.2.8 6 5.6 10.8.8 12 2 6 8 0 2z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px 8px;
+  }
+
+  .contact-form textarea {
+    height: 148px;
+    padding: 12px 14px;
+    resize: vertical;
+  }
+
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder {
+    color: #ffffff;
+    opacity: 1;
+  }
+
+  .contact-form input:focus-visible,
+  .contact-form select:focus-visible,
+  .contact-form textarea:focus-visible,
+  .contact-send:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+  }
+
+  .contact-word-count {
+    margin: -4px 2px 0;
+    color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 13px;
+  }
+
+  .contact-word-count.is-over {
+    font-weight: 700;
+  }
+
+  .contact-hp {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .contact-send {
+    height: 48px;
+    margin: 4px 0 0;
+    padding: 0 16px;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+    background: rgba(0, 24, 72, 0.28);
+    color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+  }
+
+  .contact-send:disabled {
+    opacity: 0.65;
+    cursor: default;
+  }
+
+  .contact-status {
+    margin: 0;
+    color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+}
