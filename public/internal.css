@@ -505,3 +505,61 @@ img {
     flex-shrink: 0;
   }
 }
+
+/* Brief 14: mobile Episodes base content. Locked shell rules stay above. */
+.episodes-list {
+  display: none;
+}
+
+@media (max-width: 899px) {
+  .episodes-list {
+    display: block;
+    width: calc(100% - 60px);
+    max-width: 330px;
+    margin: 28px auto 0;
+    color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+    text-align: center;
+  }
+
+  .episode-item {
+    margin: 0;
+  }
+
+  .episode-brand {
+    display: block;
+    width: 72%;
+    height: auto;
+    margin: 0 auto 18px;
+  }
+
+  .episode-art {
+    display: block;
+    width: 88%;
+    height: auto;
+    margin: 0 auto 16px;
+  }
+
+  .episode-title {
+    margin: 0 0 10px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .episode-copy {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  .episode-divider {
+    display: block;
+    width: 78%;
+    height: 0;
+    margin: 36px auto;
+    border: 0;
+    border-top: 1px solid #ffffff;
+  }
+}
