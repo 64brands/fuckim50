@@ -264,6 +264,21 @@ img {
   }
 }
 
+/* Brief 17: desktop Things I'm Doing + Merch composite panels. Hidden on mobile. */
+.desktop-temp-panel {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .desktop-temp-panel {
+    display: block;
+    width: 520px;
+    max-width: calc(100vw - 80px);
+    height: auto;
+    margin: 46px auto 0;
+  }
+}
+
 /* Brief 05: mobile Contact form only. Locked shell rules stay above. */
 .contact-form,
 .contact-success {
