@@ -146,7 +146,7 @@ function buildEmail(body) {
     escapeHtml(name) +
     "</p>" +
     '<p style="margin:0 0 16px;"><strong>Email:</strong> <a href="mailto:' +
-    safeEmail +
+    email.replace(/"/g, "") +
     '" style="color:#017efe;text-decoration:underline;">' +
     safeEmail +
     "</a></p>" +

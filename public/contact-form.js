@@ -113,8 +113,12 @@
     option.textContent = flagEmoji(item[2]) + " " + item[1];
     option.setAttribute("data-country", item[0]);
     option.setAttribute("aria-label", item[0] + " " + item[1]);
+    if (item[1] === "+61") {
+      option.selected = true;
+    }
     dial.appendChild(option);
   });
+  dial.value = "+61";
   dial.addEventListener("change", updateDialLabel);
   updateDialLabel();
 
@@ -203,6 +207,8 @@
           return;
         }
         form.reset();
+        dial.value = "+61";
+        updateDialLabel();
         updateCount();
         form.setAttribute("hidden", "");
         showStatus("Message sent. Thanks — I’ll get back to you.", "success");
