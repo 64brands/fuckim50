@@ -434,3 +434,29 @@ img {
     line-height: 1.4;
   }
 }
+
+/* Brief 08: mobile What The? core copy only. Locked shell rules stay above. */
+.what-the-copy {
+  display: none;
+}
+
+@media (max-width: 899px) {
+  .what-the-copy {
+    display: block;
+    width: calc(100% - 60px);
+    max-width: 330px;
+    margin: 24px auto 48px;
+    color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .what-the-copy p {
+    margin: 0 0 16px;
+  }
+
+  .what-the-copy p:last-child {
+    margin-bottom: 0;
+  }
+}
