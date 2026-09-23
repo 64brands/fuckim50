@@ -91,14 +91,18 @@ img {
 
   .home-asterisk .home-mark--desktop {
     display: block;
-    width: 110px;
+    width: 132px;
     height: auto;
   }
 
   .menu-toggle .menu-mark--desktop {
     display: block;
-    width: 130px;
+    width: 156px;
     height: auto;
+  }
+
+  .page-title {
+    max-width: 495px;
   }
 }
 
