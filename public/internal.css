@@ -1030,7 +1030,7 @@ img {
     width: 1120px;
     max-width: calc(100vw - 80px);
     margin: 0 auto;
-    padding: 28px 0 72px;
+    padding: 40px 0 80px;
     flex: 1 1 auto;
     color: #ffffff;
     font-family: system-ui, -apple-system, sans-serif;
@@ -1054,9 +1054,9 @@ img {
   .episode-brand {
     display: block;
     width: 100%;
-    max-width: 460px;
+    max-width: 420px;
     height: auto;
-    margin: 0 auto 28px;
+    margin: 0 auto 22px;
     position: static;
     left: auto;
   }
@@ -1067,14 +1067,14 @@ img {
   }
 
   .episode-item--podcast .episode-art {
-    width: 320px;
+    width: 310px;
     max-width: 86%;
     transform: rotate(-5.5deg);
     transform-origin: center center;
   }
 
   .episode-item--youtube .episode-art {
-    width: 355px;
+    width: 348px;
     max-width: 92%;
     transform: rotate(-5deg);
     transform-origin: center center;
@@ -1082,7 +1082,7 @@ img {
 
   .episode-text {
     min-width: 0;
-    margin-top: 24px;
+    margin-top: 20px;
     padding-top: 0;
     text-align: center;
   }
