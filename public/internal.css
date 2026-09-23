@@ -456,6 +456,17 @@ img {
     margin: 0 0 16px;
   }
 
+  .what-the-copy p:has(+ .what-the-break) {
+    margin-bottom: 0;
+  }
+
+  .what-the-break {
+    display: block;
+    width: 85%;
+    height: auto;
+    margin: 22px auto 28px;
+  }
+
   .what-the-copy p:last-child {
     margin-bottom: 0;
   }
