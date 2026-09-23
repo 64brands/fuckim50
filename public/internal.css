@@ -467,6 +467,24 @@ img {
     margin: 22px auto 28px;
   }
 
+  .what-the-copy p:has(+ .what-the-platforms) {
+    margin-bottom: 0;
+  }
+
+  .what-the-platforms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    margin: 25px auto;
+  }
+
+  .what-the-platforms img {
+    display: block;
+    width: 60px;
+    height: auto;
+  }
+
   .what-the-copy p:last-child {
     margin-bottom: 0;
   }
