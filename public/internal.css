@@ -551,7 +551,7 @@ img {
     display: block;
     width: 94%;
     height: auto;
-    margin-top: -22px;
+    margin-top: 16px;
   }
 
   .episode-item--podcast .episode-art {
@@ -561,8 +561,8 @@ img {
 
   .episode-item--youtube .episode-art {
     width: 100%;
-    margin-top: -8px;
-    transform: rotate(4.5deg);
+    margin-top: 16px;
+    transform: rotate(-5deg);
     transform-origin: center center;
   }
 
@@ -570,8 +570,8 @@ img {
     grid-column: 2;
     grid-row: 2;
     min-width: 0;
-    padding-top: 10px;
-    text-align: left;
+    padding-top: 16px;
+    text-align: center;
   }
 
   .episode-number,
@@ -594,6 +594,7 @@ img {
 
   .episode-platforms {
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 10px;
     margin-top: 14px;
