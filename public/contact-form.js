@@ -150,6 +150,10 @@
     form.setAttribute("hidden", "");
     status.hidden = true;
     if (success) success.hidden = false;
+    window.scrollTo(0, 0);
+    requestAnimationFrame(function () {
+      window.scrollTo(0, 0);
+    });
   }
 
   function combinePhone() {
