@@ -531,8 +531,8 @@ img {
     grid-template-columns: 56% minmax(0, 1fr);
     grid-template-rows: auto auto;
     column-gap: 10px;
-    row-gap: 0;
-    align-items: start;
+    row-gap: 28px;
+    align-items: center;
     margin: 0;
   }
 
@@ -551,7 +551,7 @@ img {
     display: block;
     width: 94%;
     height: auto;
-    margin-top: 28px;
+    margin-top: 0;
   }
 
   .episode-item--podcast .episode-art {
@@ -561,7 +561,7 @@ img {
 
   .episode-item--youtube .episode-art {
     width: 100%;
-    margin-top: 28px;
+    margin-top: 0;
     transform: rotate(-5deg);
     transform-origin: center center;
   }
@@ -570,7 +570,7 @@ img {
     grid-column: 2;
     grid-row: 2;
     min-width: 0;
-    padding-top: 16px;
+    padding-top: 0;
     text-align: center;
   }
 
@@ -597,7 +597,7 @@ img {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin-top: 14px;
+    margin-top: 26px;
   }
 
   .episode-platforms img {
