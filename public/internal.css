@@ -161,6 +161,7 @@ img {
 }
 
 @media (max-width: 899px) {
+  html:has(body.temp-page),
   body.temp-page {
     position: relative;
     overflow-x: hidden;
