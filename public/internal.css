@@ -490,3 +490,18 @@ img {
     margin-bottom: 0;
   }
 }
+
+/* Brief 13B: short internal pages keep the footer at the viewport bottom.
+   Long pages still grow in normal document flow. Not fixed/sticky/absolute. */
+@media (max-width: 899px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+  }
+
+  .site-footer {
+    margin-top: auto;
+    flex-shrink: 0;
+  }
+}
