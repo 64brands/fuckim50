@@ -81,6 +81,7 @@
   var message = form.querySelector("[name=message]");
   var counter = form.querySelector(".contact-word-count");
   var status = document.querySelector(".contact-status");
+  var success = document.querySelector(".contact-success");
   var submit = form.querySelector("[type=submit]");
 
   function flagEmoji(iso) {
@@ -135,9 +136,20 @@
   }
 
   function showStatus(text, kind) {
+    if (success) success.hidden = true;
     status.hidden = false;
     status.textContent = text;
     status.className = "contact-status is-" + kind;
+  }
+
+  function showSuccess() {
+    form.reset();
+    dial.value = "+61";
+    updateDialLabel();
+    updateCount();
+    form.setAttribute("hidden", "");
+    status.hidden = true;
+    if (success) success.hidden = false;
   }
 
   function combinePhone() {
@@ -206,12 +218,7 @@
           showStatus("Something went wrong. Please try again.", "error");
           return;
         }
-        form.reset();
-        dial.value = "+61";
-        updateDialLabel();
-        updateCount();
-        form.setAttribute("hidden", "");
-        showStatus("Message sent. Thanks — I’ll get back to you.", "success");
+        showSuccess();
       })
       .catch(function () {
         submit.disabled = false;

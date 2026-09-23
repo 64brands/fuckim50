@@ -224,7 +224,8 @@ img {
 }
 
 /* Brief 05: mobile Contact form only. Locked shell rules stay above. */
-.contact-form {
+.contact-form,
+.contact-success {
   display: none;
 }
 
@@ -237,6 +238,70 @@ img {
     max-width: 342px;
     margin: 78px auto 40px;
     gap: 17px;
+  }
+
+  .contact-form[hidden] {
+    display: none;
+  }
+
+  .contact-success {
+    display: none;
+  }
+
+  .contact-success:not([hidden]) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: calc(100% - 48px);
+    max-width: 342px;
+    min-height: calc(
+      100dvh - 162px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)
+    );
+    margin: 0 auto;
+    padding: 8px 8px 40px;
+    color: #ffffff;
+    text-align: center;
+    font-family: system-ui, -apple-system, sans-serif;
+    animation: contact-success-in 0.35s ease;
+  }
+
+  .contact-success-kicker,
+  .contact-success-thanks,
+  .contact-success-hint {
+    margin: 0;
+    color: #ffffff;
+  }
+
+  .contact-success-kicker {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: 0.04em;
+  }
+
+  .contact-success-thanks {
+    margin-top: 16px;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  .contact-success-hint {
+    margin-top: 28px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.45;
+  }
+
+  @keyframes contact-success-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   .contact-visually-hidden {
