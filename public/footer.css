@@ -45,7 +45,7 @@
   }
 }
 
-/* Brief 16B: desktop internal footer only. Landing stays hidden.
+/* Brief 16B: desktop internal footer.
    Same in-flow / short-page pin as mobile. Not fixed, sticky, or absolute. */
 @media (min-width: 900px) {
   body:has(.internal-header) {
@@ -76,6 +76,43 @@
   }
 
   body:has(.internal-header) .site-footer p {
+    margin: 0;
+  }
+}
+
+/* Brief 16C: same desktop footer on the landing page.
+   Stages stay viewport-fixed so the locked composition does not move.
+   Footer stays in-flow (margin-top: auto) and stacks above the stage. */
+@media (min-width: 900px) and (min-height: 560px) {
+  body:has(> .stage--desktop) {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+  }
+
+  body:has(> .stage--desktop) .site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: auto;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    flex-shrink: 0;
+    padding: 36px 22px 22px;
+    color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.3;
+    position: relative;
+    z-index: 2;
+  }
+
+  body:has(> .stage--desktop) .site-footer p {
     margin: 0;
   }
 }
