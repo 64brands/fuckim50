@@ -1018,3 +1018,104 @@ img {
     border-top: 1px solid #ffffff;
   }
 }
+
+/* Brief 20: desktop Episodes two-column launch layout. Mobile rules above stay locked. */
+@media (min-width: 900px) {
+  .episodes-list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-content: center;
+    column-gap: 72px;
+    box-sizing: border-box;
+    width: 1120px;
+    max-width: calc(100vw - 80px);
+    margin: 0 auto;
+    padding: 28px 0 72px;
+    flex: 1 1 auto;
+    color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .episode-divider {
+    display: none;
+  }
+
+  .episode-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 0;
+    margin: 0;
+  }
+
+  .episode-brand {
+    display: block;
+    width: 100%;
+    max-width: 460px;
+    height: auto;
+    margin: 0 auto 28px;
+    position: static;
+    left: auto;
+  }
+
+  .episode-art {
+    display: block;
+    height: auto;
+  }
+
+  .episode-item--podcast .episode-art {
+    width: 320px;
+    max-width: 86%;
+    transform: rotate(-5.5deg);
+    transform-origin: center center;
+  }
+
+  .episode-item--youtube .episode-art {
+    width: 355px;
+    max-width: 92%;
+    transform: rotate(-5deg);
+    transform-origin: center center;
+  }
+
+  .episode-text {
+    min-width: 0;
+    margin-top: 24px;
+    padding-top: 0;
+    text-align: center;
+  }
+
+  .episode-number,
+  .episode-name {
+    margin: 0;
+  }
+
+  .episode-number {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .episode-name {
+    margin-top: 4px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .episode-platforms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin-top: 20px;
+  }
+
+  .episode-platforms img {
+    display: block;
+    width: 48px;
+    height: auto;
+  }
+}
