@@ -1026,7 +1026,7 @@ img {
     grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr);
     grid-template-rows: auto;
     align-content: center;
-    align-items: center;
+    align-items: start;
     column-gap: 36px;
     box-sizing: border-box;
     width: 1120px;
