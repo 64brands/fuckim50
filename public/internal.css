@@ -521,7 +521,7 @@ img {
     display: block;
     width: calc(100% - 28px);
     max-width: 362px;
-    margin: 12px auto 0;
+    margin: 32px auto 0;
     color: #ffffff;
     font-family: system-ui, -apple-system, sans-serif;
   }
@@ -543,6 +543,8 @@ img {
     width: 100%;
     height: auto;
     margin: 0;
+    position: relative;
+    left: calc((100vw - 100%) / 2 - 20px);
   }
 
   .episode-art {
