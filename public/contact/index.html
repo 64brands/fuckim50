@@ -80,8 +80,9 @@
       <p class="contact-success-hint">If you're hungry for more, click the hamburger for the menu.</p>
     </div>
     <form class="contact-form" id="contact-form" novalidate>
-      <label class="contact-field">
+      <label class="contact-field contact-field--subject">
         <span class="contact-visually-hidden">Subject</span>
+        <span class="contact-desktop-label">ENQUIRY TYPE</span>
         <select name="subject" required>
           <option value="" disabled selected>Subject</option>
           <option value="Become a Guest">Become a Guest</option>
@@ -89,12 +90,14 @@
           <option value="Commercial Partnerships">Commercial Partnerships</option>
         </select>
       </label>
-      <label class="contact-field">
+      <label class="contact-field contact-field--name">
         <span class="contact-visually-hidden">Your Name</span>
+        <span class="contact-desktop-label">NAME</span>
         <input type="text" name="name" placeholder="Your Name" autocomplete="name" required />
       </label>
-      <label class="contact-field">
+      <label class="contact-field contact-field--email">
         <span class="contact-visually-hidden">Email Address</span>
+        <span class="contact-desktop-label">EMAIL</span>
         <input
           type="email"
           name="email"
@@ -105,6 +108,7 @@
         />
       </label>
       <div class="contact-phone">
+        <span class="contact-desktop-label">PHONE</span>
         <label class="contact-field contact-field--dial">
           <span class="contact-visually-hidden">Country dial code</span>
           <select name="dial" required>
@@ -123,8 +127,9 @@
           />
         </label>
       </div>
-      <label class="contact-field">
+      <label class="contact-field contact-field--message">
         <span class="contact-visually-hidden">Your Message</span>
+        <span class="contact-desktop-label">MESSAGE</span>
         <textarea name="message" placeholder="Your Message..." rows="6" required></textarea>
       </label>
       <p class="contact-word-count" aria-live="polite">0 / 500 words</p>
@@ -134,7 +139,10 @@
           <input type="text" name="website" tabindex="-1" autocomplete="off" />
         </label>
       </div>
-      <button class="contact-send" type="submit">SEND MESSAGE</button>
+      <button class="contact-send" type="submit">
+        <span class="contact-send-label--mobile">SEND MESSAGE</span>
+        <span class="contact-send-label--desktop">SEND</span>
+      </button>
     </form>
     <p class="contact-status" hidden></p>
     <footer class="site-footer">

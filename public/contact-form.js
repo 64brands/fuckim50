@@ -1,9 +1,17 @@
 (function () {
-  var SUBJECTS = [
+  var MOBILE_SUBJECTS = [
     "Become a Guest",
     "General Comments",
     "Commercial Partnerships",
   ];
+
+  var DESKTOP_SUBJECTS = [
+    "Become a Guest",
+    "Commercial Opportunities",
+    "General Enquiry",
+  ];
+
+  var desktopQuery = window.matchMedia("(min-width: 900px)");
 
   var DIAL_CODES = [
     ["Afghanistan", "+93", "AF"],
@@ -78,11 +86,48 @@
   if (!form) return;
 
   var dial = form.querySelector("[name=dial]");
+  var subject = form.querySelector("[name=subject]");
   var message = form.querySelector("[name=message]");
   var counter = form.querySelector(".contact-word-count");
   var status = document.querySelector(".contact-status");
   var success = document.querySelector(".contact-success");
   var submit = form.querySelector("[type=submit]");
+
+  function isDesktop() {
+    return desktopQuery.matches;
+  }
+
+  function subjects() {
+    return isDesktop() ? DESKTOP_SUBJECTS : MOBILE_SUBJECTS;
+  }
+
+  function wordLimit() {
+    return isDesktop() ? 300 : 500;
+  }
+
+  function applyViewportFields() {
+    var current = String(subject.value || "");
+    var list = subjects();
+    var placeholder = document.createElement("option");
+    placeholder.value = "";
+    placeholder.disabled = true;
+    placeholder.textContent = isDesktop() ? "Enquiry Type" : "Subject";
+    subject.innerHTML = "";
+    subject.appendChild(placeholder);
+    list.forEach(function (label) {
+      var option = document.createElement("option");
+      option.value = label;
+      option.textContent = label;
+      subject.appendChild(option);
+    });
+    if (list.indexOf(current) !== -1) {
+      subject.value = current;
+    } else {
+      placeholder.selected = true;
+      subject.value = "";
+    }
+    updateCount();
+  }
 
   function flagEmoji(iso) {
     return iso
@@ -131,8 +176,9 @@
 
   function updateCount() {
     var count = wordCount(message.value);
-    counter.textContent = count + " / 500 words";
-    counter.classList.toggle("is-over", count > 500);
+    var limit = wordLimit();
+    counter.textContent = count + " / " + limit + " words";
+    counter.classList.toggle("is-over", count > limit);
   }
 
   function showStatus(text, kind) {
@@ -144,6 +190,7 @@
 
   function showSuccess() {
     form.reset();
+    applyViewportFields();
     dial.value = "+61";
     updateDialLabel();
     updateCount();
@@ -164,8 +211,28 @@
     return code + " " + number;
   }
 
-  message.addEventListener("input", updateCount);
-  updateCount();
+  function enforceWordLimit() {
+    var limit = wordLimit();
+    if (!isDesktop() || wordCount(message.value) <= limit) {
+      updateCount();
+      return;
+    }
+    message.value = String(message.value)
+      .trim()
+      .split(/\s+/)
+      .filter(Boolean)
+      .slice(0, limit)
+      .join(" ");
+    updateCount();
+  }
+
+  message.addEventListener("input", enforceWordLimit);
+  applyViewportFields();
+  if (desktopQuery.addEventListener) {
+    desktopQuery.addEventListener("change", applyViewportFields);
+  } else if (desktopQuery.addListener) {
+    desktopQuery.addListener(applyViewportFields);
+  }
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -180,8 +247,11 @@
       website: String(form.website.value || ""),
     };
 
-    if (SUBJECTS.indexOf(payload.subject) === -1) {
-      showStatus("Please choose a subject.", "error");
+    if (subjects().indexOf(payload.subject) === -1) {
+      showStatus(
+        isDesktop() ? "Please choose an enquiry type." : "Please choose a subject.",
+        "error"
+      );
       return;
     }
     if (!payload.name) {
@@ -200,8 +270,8 @@
       showStatus("Please enter a message.", "error");
       return;
     }
-    if (wordCount(payload.message) > 500) {
-      showStatus("Please keep your message to 500 words.", "error");
+    if (wordCount(payload.message) > wordLimit()) {
+      showStatus("Please keep your message to " + wordLimit() + " words.", "error");
       return;
     }
 

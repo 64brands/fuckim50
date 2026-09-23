@@ -285,6 +285,23 @@ img {
   display: none;
 }
 
+.contact-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.contact-desktop-label,
+.contact-send-label--desktop {
+  display: none;
+}
+
 @media (max-width: 899px) {
   .contact-form {
     position: relative;
@@ -488,6 +505,255 @@ img {
     font-family: system-ui, -apple-system, sans-serif;
     font-size: 16px;
     line-height: 1.4;
+  }
+}
+
+/* Brief 18: desktop Contact form + MESSAGE SENT. Mobile rules above stay locked. */
+@media (min-width: 900px) {
+  .contact-form {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas:
+      "name email"
+      "phone type"
+      "message message"
+      "count count"
+      "send send";
+    width: 720px;
+    max-width: calc(100vw - 80px);
+    margin: 48px auto 40px;
+    column-gap: 20px;
+    row-gap: 16px;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .contact-form[hidden] {
+    display: none;
+  }
+
+  .contact-field--name {
+    grid-area: name;
+  }
+
+  .contact-field--email {
+    grid-area: email;
+  }
+
+  .contact-phone {
+    grid-area: phone;
+  }
+
+  .contact-field--subject {
+    grid-area: type;
+  }
+
+  .contact-field--message {
+    grid-area: message;
+  }
+
+  .contact-word-count {
+    grid-area: count;
+  }
+
+  .contact-send {
+    grid-area: send;
+  }
+
+  .contact-success {
+    display: none;
+  }
+
+  .contact-success:not([hidden]) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    flex: 1 1 auto;
+    width: 720px;
+    max-width: calc(100vw - 80px);
+    margin: 0 auto;
+    padding: 48px 8px 40px;
+    color: #ffffff;
+    text-align: center;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  .contact-success-kicker,
+  .contact-success-thanks,
+  .contact-success-hint {
+    margin: 0;
+    color: #ffffff;
+  }
+
+  .contact-success-kicker {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: 0.06em;
+  }
+
+  .contact-success-thanks {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  .contact-success-hint {
+    margin-top: 32px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.45;
+  }
+
+  .contact-desktop-label {
+    display: block;
+    margin: 0 0 8px 2px;
+    color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+
+  .contact-field,
+  .contact-phone {
+    display: block;
+    margin: 0;
+    min-width: 0;
+  }
+
+  .contact-phone {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+  }
+
+  .contact-phone .contact-desktop-label {
+    flex: 1 0 100%;
+  }
+
+  .contact-field--dial {
+    width: 118px;
+    flex: 0 0 118px;
+  }
+
+  .contact-field--number {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    display: block;
+    width: 100%;
+    height: 48px;
+    margin: 0;
+    padding: 0 14px;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+    background: rgba(0, 24, 72, 0.28);
+    color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.3;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  .contact-form select {
+    padding-right: 32px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='white' d='M1.2.8 6 5.6 10.8.8 12 2 6 8 0 2z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px 8px;
+  }
+
+  .contact-form textarea {
+    height: 140px;
+    padding: 12px 14px;
+    resize: vertical;
+  }
+
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder {
+    color: #ffffff;
+    opacity: 1;
+  }
+
+  .contact-form input:focus-visible,
+  .contact-form select:focus-visible,
+  .contact-form textarea:focus-visible,
+  .contact-send:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+  }
+
+  .contact-word-count {
+    margin: -6px 2px 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 12px;
+    text-align: right;
+  }
+
+  .contact-word-count.is-over {
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  .contact-hp {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .contact-send {
+    justify-self: center;
+    width: 200px;
+    height: 48px;
+    margin: 4px 0 0;
+    padding: 0 16px;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+    background: rgba(0, 24, 72, 0.28);
+    color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+  }
+
+  .contact-send-label--mobile {
+    display: none;
+  }
+
+  .contact-send-label--desktop {
+    display: inline;
+  }
+
+  .contact-send:disabled {
+    opacity: 0.65;
+    cursor: default;
+  }
+
+  .contact-status {
+    width: 720px;
+    max-width: calc(100vw - 80px);
+    margin: 0 auto 28px;
+    color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: center;
   }
 }
 

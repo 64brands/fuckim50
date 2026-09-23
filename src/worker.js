@@ -7,6 +7,8 @@ var ALLOWED_SUBJECTS = [
   "Become a Guest",
   "General Comments",
   "Commercial Partnerships",
+  "Commercial Opportunities",
+  "General Enquiry",
 ];
 
 var CONTACT_TO = "paul@fuckim50.show";
