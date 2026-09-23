@@ -154,3 +154,70 @@ img {
   transform-origin: center center;
   margin-top: 5px;
 }
+
+/* Brief 03A: temporary mobile content on Things I’m Doing + Merch only. */
+.temp-content {
+  display: none;
+}
+
+@media (max-width: 899px) {
+  body.temp-page {
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body.temp-page .internal-header {
+    z-index: 3;
+  }
+
+  body.temp-page .site-menu {
+    z-index: 2;
+  }
+
+  body.temp-page .page-title {
+    position: relative;
+    z-index: 1;
+  }
+
+  .temp-content {
+    display: block;
+  }
+
+  .temp-paul,
+  .temp-copy {
+    position: absolute;
+    height: auto;
+    pointer-events: none;
+  }
+
+  .temp-paul {
+    width: auto;
+    height: 540px;
+    z-index: 0;
+  }
+
+  .temp-paul--left {
+    top: 208px;
+    left: -78px;
+  }
+
+  .temp-paul--right {
+    top: 186px;
+    right: -78px;
+  }
+
+  .temp-copy {
+    width: 170px;
+    z-index: 0;
+  }
+
+  .temp-copy--things {
+    top: 248px;
+    right: 24px;
+  }
+
+  .temp-copy--merch {
+    top: 226px;
+    left: 24px;
+  }
+}
