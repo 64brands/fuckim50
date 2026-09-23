@@ -227,6 +227,9 @@ export default {
   async fetch(request, env) {
     var url = new URL(request.url);
     if (isContactApi(url.pathname)) {
+      if (!env.RESEND_API_KEY && env.CONTACT) {
+        return env.CONTACT.fetch(request);
+      }
       return handleContact(request, env);
     }
     return env.ASSETS.fetch(request);
