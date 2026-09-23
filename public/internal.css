@@ -68,6 +68,40 @@ img {
   width: auto;
 }
 
+.home-mark--desktop,
+.menu-mark--desktop {
+  display: none;
+}
+
+/* Brief 16: desktop internal header — full logo + combined menu asset.
+   Header in-flow height stays locked so centred page titles do not move. */
+@media (min-width: 900px) {
+  .internal-header {
+    height: 58px;
+    padding-top: 22px;
+    padding-left: 22px;
+    padding-right: 22px;
+    overflow: visible;
+  }
+
+  .home-mark--mobile,
+  .menu-mark--mobile {
+    display: none;
+  }
+
+  .home-asterisk .home-mark--desktop {
+    display: block;
+    width: 110px;
+    height: auto;
+  }
+
+  .menu-toggle .menu-mark--desktop {
+    display: block;
+    width: 130px;
+    height: auto;
+  }
+}
+
 .page-title {
   margin: 20px auto 0;
   max-width: min(330px, calc(100vw - 60px));
