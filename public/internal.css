@@ -628,18 +628,40 @@ img {
     min-width: 0;
   }
 
+  .contact-field--subject {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto 48px;
+    align-items: start;
+    row-gap: 8px;
+  }
+
   .contact-phone {
     display: grid;
     grid-template-columns: 118px minmax(0, 1fr);
+    grid-template-rows: auto 48px;
     align-items: start;
     column-gap: 10px;
-    row-gap: 0;
+    row-gap: 8px;
     margin: 0;
     min-width: 0;
   }
 
-  .contact-phone .contact-desktop-label {
+  .contact-phone .contact-desktop-label,
+  .contact-field--subject .contact-desktop-label {
     grid-column: 1 / -1;
+    grid-row: 1;
+    margin-bottom: 0;
+  }
+
+  .contact-field--dial {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .contact-field--number {
+    grid-column: 2;
+    grid-row: 2;
   }
 
   .contact-field--dial,
