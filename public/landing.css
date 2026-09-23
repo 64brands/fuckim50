@@ -221,8 +221,8 @@ a:focus-visible {
 }
 
 .artboard--desktop .headline {
-  left: 50.8%;
-  top: 43.6%;
+  left: 53.2%;
+  top: calc(43.6% + 15px);
   width: 34.2%;
   z-index: 5;
 }
