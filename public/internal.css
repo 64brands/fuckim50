@@ -506,59 +506,126 @@ img {
   }
 }
 
-/* Brief 14: mobile Episodes base content. Locked shell rules stay above. */
+/* Brief 14 / 14A: mobile Episodes composition. Locked shell rules stay above. */
 .episodes-list {
   display: none;
 }
 
 @media (max-width: 899px) {
+  html:has(.episodes-list),
+  body:has(.episodes-list) {
+    overflow-x: hidden;
+  }
+
   .episodes-list {
     display: block;
-    width: calc(100% - 60px);
-    max-width: 330px;
-    margin: 28px auto 0;
+    width: calc(100% - 32px);
+    max-width: 358px;
+    margin: 18px auto 0;
     color: #ffffff;
     font-family: system-ui, -apple-system, sans-serif;
-    text-align: center;
   }
 
   .episode-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 46% minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    column-gap: 10px;
+    row-gap: 6px;
+    align-items: start;
     margin: 0;
+    padding-top: 28px;
+  }
+
+  .episode-arrow {
+    position: absolute;
+    z-index: 2;
+    width: 62px;
+    height: auto;
+    pointer-events: none;
+  }
+
+  .episode-item--podcast .episode-arrow {
+    left: 14%;
+    top: 0;
+    transform: rotate(98deg);
+  }
+
+  .episode-item--youtube .episode-arrow {
+    left: 10%;
+    top: 2px;
+    transform: rotate(-78deg) scaleX(-1);
   }
 
   .episode-brand {
+    grid-column: 2;
+    grid-row: 1;
     display: block;
-    width: 72%;
+    width: 100%;
+    max-width: 176px;
     height: auto;
-    margin: 0 auto 18px;
+    margin: 0 0 0 auto;
   }
 
   .episode-art {
+    grid-column: 1;
+    grid-row: 1 / span 2;
     display: block;
-    width: 88%;
+    width: 100%;
     height: auto;
-    margin: 0 auto 16px;
+    margin-top: 10px;
   }
 
-  .episode-title {
-    margin: 0 0 10px;
+  .episode-item--podcast .episode-art {
+    transform: rotate(-5.5deg);
+    transform-origin: center center;
+  }
+
+  .episode-item--youtube .episode-art {
+    margin-top: 22px;
+    transform: rotate(4.5deg);
+    transform-origin: center center;
+  }
+
+  .episode-text {
+    grid-column: 2;
+    grid-row: 2;
+    min-width: 0;
+    text-align: left;
+  }
+
+  .episode-number,
+  .episode-name,
+  .episode-copy {
+    margin: 0;
+  }
+
+  .episode-number {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .episode-name {
+    margin-top: 2px;
     font-size: 18px;
     font-weight: 700;
-    line-height: 1.25;
+    line-height: 1.2;
   }
 
   .episode-copy {
-    margin: 0;
-    font-size: 15px;
+    margin-top: 8px;
+    font-size: 13px;
     font-weight: 400;
-    line-height: 1.4;
+    line-height: 1.35;
   }
 
   .episode-divider {
     display: block;
-    width: 78%;
+    width: 82%;
     height: 0;
-    margin: 36px auto;
+    margin: 34px auto;
     border: 0;
     border-top: 1px solid #ffffff;
   }
