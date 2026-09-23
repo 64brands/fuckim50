@@ -631,9 +631,9 @@ img {
   .contact-phone {
     display: grid;
     grid-template-columns: 118px minmax(0, 1fr);
-    align-items: end;
+    align-items: start;
     column-gap: 10px;
-    row-gap: 8px;
+    row-gap: 0;
     margin: 0;
     min-width: 0;
   }
