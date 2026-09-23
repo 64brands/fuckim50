@@ -12,7 +12,9 @@
     gap: 12px;
     width: 100%;
     box-sizing: border-box;
-    margin: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
     padding: 36px calc(20px + env(safe-area-inset-right, 0px))
       calc(18px + env(safe-area-inset-bottom, 0px))
       calc(20px + env(safe-area-inset-left, 0px));
