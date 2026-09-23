@@ -195,6 +195,16 @@ img {
   margin-top: 5px;
 }
 
+/* Brief 22: desktop opened menu sits under the top-right trigger. */
+@media (min-width: 900px) {
+  .site-menu {
+    top: 192px;
+    left: auto;
+    right: 22px;
+    transform: none;
+  }
+}
+
 /* Brief 03A: temporary mobile content on Things I’m Doing + Merch only. */
 .temp-content {
   display: none;
