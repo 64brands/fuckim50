@@ -179,11 +179,29 @@ a:focus-visible {
 
   .stage--desktop {
     display: grid;
+    place-items: center;
   }
 
-  .artboard--desktop {
-    width: min(100vw, calc(100dvh * 1154 / 769));
-    height: min(100dvh, calc(100vw * 769 / 1154));
+  /* Master stage = visible Fi50 group (Paul left → Contact right).
+     Centred in the viewport so left/right gutters stay equal. */
+  .desktop-master {
+    --poster-w: min(100vw, calc(100dvh * 1154 / 769));
+    --poster-h: min(100dvh, calc(100vw * 769 / 1154));
+    --group-left: 0.156;
+    --group-right: 0.9541;
+    width: calc(var(--poster-w) * (var(--group-right) - var(--group-left)));
+    height: var(--poster-h);
+    max-width: 100%;
+    margin-inline: auto;
+    position: relative;
+  }
+
+  .stage--desktop .artboard--desktop {
+    position: absolute;
+    top: 0;
+    left: calc(var(--poster-w) * var(--group-left) * -1);
+    width: var(--poster-w);
+    height: var(--poster-h);
   }
 }
 
