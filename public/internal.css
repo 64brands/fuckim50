@@ -551,7 +551,7 @@ img {
     display: block;
     width: 94%;
     height: auto;
-    margin-top: 16px;
+    margin-top: 28px;
   }
 
   .episode-item--podcast .episode-art {
@@ -561,7 +561,7 @@ img {
 
   .episode-item--youtube .episode-art {
     width: 100%;
-    margin-top: 16px;
+    margin-top: 28px;
     transform: rotate(-5deg);
     transform-origin: center center;
   }
