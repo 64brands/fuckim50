@@ -836,6 +836,62 @@ img {
   }
 }
 
+/* Brief 19: desktop What The? editorial content. Mobile rules above stay locked. */
+@media (min-width: 900px) {
+  .what-the-copy {
+    display: block;
+    box-sizing: border-box;
+    width: 860px;
+    max-width: calc(100vw - 80px);
+    margin: 52px auto 48px;
+    color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 19px;
+    line-height: 1.6;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .what-the-copy p {
+    margin: 0 0 22px;
+  }
+
+  .what-the-copy p:has(+ .what-the-break) {
+    margin-bottom: 0;
+  }
+
+  .what-the-break {
+    display: block;
+    width: 680px;
+    max-width: 100%;
+    height: auto;
+    margin: 36px auto 40px;
+  }
+
+  .what-the-copy p:has(+ .what-the-platforms) {
+    margin-bottom: 0;
+  }
+
+  .what-the-platforms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    margin: 36px auto;
+  }
+
+  .what-the-platforms img {
+    display: block;
+    width: 84px;
+    height: auto;
+  }
+
+  .what-the-copy p:last-child {
+    margin-bottom: 0;
+  }
+}
+
 /* Brief 13B: short internal pages keep the footer at the viewport bottom.
    Long pages still grow in normal document flow. Not fixed/sticky/absolute. */
 @media (max-width: 899px) {
