@@ -100,16 +100,18 @@ img {
     width: 156px;
     height: auto;
   }
-
-  .page-title {
-    max-width: 495px;
-  }
 }
 
 .page-title {
   margin: 20px auto 0;
   max-width: min(330px, calc(100vw - 60px));
   padding: 0;
+}
+
+@media (min-width: 900px) {
+  .page-title {
+    max-width: 495px;
+  }
 }
 
 .page-title img {
