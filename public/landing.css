@@ -1,0 +1,283 @@
+/* F*CK! I'M 50 — Brief 01 Landing page
+   Two locked compositions (mobile poster / desktop poster).
+   Positions are percentages of each approved artboard. */
+
+:root {
+  --fi50-blue: #017efe;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--fi50-blue);
+  min-height: 100%;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  max-width: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+a:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.stage {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: var(--fi50-blue);
+}
+
+.artboard {
+  position: relative;
+  background: var(--fi50-blue);
+  overflow: hidden;
+  container-type: size;
+}
+
+.artboard img,
+.artboard a.btn,
+.artboard h1 {
+  position: absolute;
+  margin: 0;
+}
+
+.artboard a.btn img {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.artboard .logo,
+.artboard .logo-large,
+.artboard .paul,
+.artboard h1 img {
+  height: auto;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Mobile artboard — 488 × 868 locked poster                                  */
+/* -------------------------------------------------------------------------- */
+
+.stage--desktop {
+  display: none;
+}
+
+.artboard--mobile {
+  width: 100vw;
+  height: 100dvh;
+}
+
+.artboard--mobile .logo {
+  left: calc((100% - 85.9815%) / 2);
+  top: 0;
+  width: 85.9815%;
+  z-index: 6;
+}
+
+.artboard--mobile .paul {
+  left: calc(74.1% * -18 / 512);
+  top: calc(20% + 0.1 * 74.1vw * 1010 / 512 - 0.05 * 66.69vw * 1010 / 512);
+  width: 70.0245%;
+  height: auto;
+  object-fit: contain;
+  object-position: left bottom;
+  z-index: 2;
+}
+
+.artboard--mobile .headline {
+  left: calc(100% - 20px - 50.16% * 810 / 822);
+  top: calc(19% + 73px);
+  width: 50.16%;
+  z-index: 3;
+}
+
+.artboard--mobile .headline img {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.artboard--mobile .poster-nav {
+  position: absolute;
+  left: 32%;
+  width: 65%;
+  top: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.4cqh;
+  z-index: 5;
+}
+
+.artboard--mobile .poster-nav .btn {
+  position: relative;
+  left: auto;
+  top: auto;
+  width: 100%;
+  transform: rotate(-5.2deg) scale(0.72);
+  transform-origin: center center;
+  z-index: 5;
+}
+
+.artboard--mobile .poster-nav .btn-episodes {
+  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 337 / 1032) / 2 + 5px)) translateY(70px) rotate(-5.2deg) scale(0.72);
+}
+
+.artboard--mobile .poster-nav .btn-what-the {
+  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 347 / 1015) / 2 + 5px)) translateY(49px) rotate(-5.2deg) scale(0.72);
+}
+
+.artboard--mobile .poster-nav .btn-things {
+  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 370 / 1030) / 2 + 7px)) translateY(30px) rotate(-2.2deg) scale(0.72);
+}
+
+.artboard--mobile .poster-nav .btn-merch {
+  transform: translateX(calc(35.5vw - 10px - (0.796708 * 65vw + 0.072506 * 65vw * 375 / 1037) / 2 + 10px)) translateY(6px) rotate(-5.2deg) scale(0.72);
+}
+
+.artboard--mobile .poster-nav .btn-episodes img,
+.artboard--mobile .poster-nav .btn-what-the img,
+.artboard--mobile .poster-nav .btn-things img,
+.artboard--mobile .poster-nav .btn-merch img {
+  filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.18));
+}
+
+.artboard--mobile .poster-nav .btn-contact {
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  top: calc(43cqh + 55px);
+  transform: translateX(calc(35.5vw - 20px - (0.677202 * 52vw + 0.061630 * 52vw * 255 / 862) / 2)) rotate(-5.2deg) scale(0.5814);
+  transform-origin: center center;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Desktop artboard — 1154 × 769 locked composition                           */
+/* Shown from 900px wide, when there is enough height for the poster.         */
+/* -------------------------------------------------------------------------- */
+
+@media (min-width: 900px) and (min-height: 560px) {
+  .stage--mobile {
+    display: none;
+  }
+
+  .stage--desktop {
+    display: grid;
+    place-items: center;
+  }
+
+  /* Master stage = visible Fi50 group (Paul left → Contact right).
+     Centred in the viewport so left/right gutters stay equal. */
+  .desktop-master {
+    --poster-w: min(100vw, calc(100dvh * 1154 / 769));
+    --poster-h: min(100dvh, calc(100vw * 769 / 1154));
+    --group-left: 0.156;
+    --group-right: 0.9541;
+    width: calc(var(--poster-w) * (var(--group-right) - var(--group-left)));
+    height: var(--poster-h);
+    max-width: 100%;
+    margin-inline: auto;
+    position: relative;
+  }
+
+  .stage--desktop .artboard--desktop {
+    position: absolute;
+    top: 0;
+    left: calc(var(--poster-w) * var(--group-left) * -1);
+    width: var(--poster-w);
+    height: var(--poster-h);
+  }
+}
+
+.artboard--desktop .paul {
+  left: 15.6%;
+  top: 0.8%;
+  height: 98.8%;
+  width: auto;
+  z-index: 2;
+}
+
+.artboard--desktop .logo-large {
+  left: 46.2%;
+  top: 2.6%;
+  width: 48.2%;
+  z-index: 4;
+}
+
+.artboard--desktop .headline {
+  left: 53.2%;
+  top: calc(43.6% + 15px);
+  width: 34.2%;
+  z-index: 5;
+}
+
+.artboard--desktop .headline img {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.artboard--desktop .poster-nav {
+  position: static;
+}
+
+.artboard--desktop .btn-episodes {
+  left: 46.8%;
+  top: 62.6%;
+  width: 22.6%;
+  transform: translateY(20px) rotate(-6deg) scale(0.9);
+  transform-origin: center center;
+  z-index: 6;
+}
+
+.artboard--desktop .btn-what-the {
+  left: 70.6%;
+  top: 62.13%;
+  width: 23.4%;
+  transform: translateY(20px) rotate(-6deg) scale(0.9);
+  transform-origin: center center;
+  z-index: 6;
+}
+
+.artboard--desktop .btn-things {
+  left: 47.4%;
+  top: 74.2%;
+  width: 22.2%;
+  transform: translateY(35px) rotate(-6deg) scale(0.9);
+  transform-origin: center center;
+  z-index: 6;
+}
+
+.artboard--desktop .btn-merch {
+  left: 70%;
+  top: 73.4%;
+  width: 24.8%;
+  transform: translateY(35px) rotate(-6deg) scale(0.9);
+  transform-origin: center center;
+  z-index: 6;
+}
+
+.artboard--desktop .btn-contact {
+  left: 81.8%;
+  top: 88.8%;
+  width: 14.2%;
+  transform: rotate(-4deg) scale(0.9);
+  transform-origin: center center;
+  z-index: 6;
+}

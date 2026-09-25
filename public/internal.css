@@ -1,0 +1,1184 @@
+/* F*CK! I'M 50 — mobile internal page shell (Brief 02A).
+   Landing page CSS is not used here. */
+
+:root {
+  --fi50-blue: #017efe;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--fi50-blue);
+  min-height: 100%;
+  min-height: 100dvh;
+}
+
+img {
+  display: block;
+  max-width: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.internal-header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: calc(10px + env(safe-area-inset-top, 0px));
+  padding-left: calc(10px + env(safe-area-inset-left, 0px));
+  padding-right: calc(10px + env(safe-area-inset-right, 0px));
+}
+
+.home-asterisk,
+.menu-toggle {
+  display: block;
+  line-height: 0;
+}
+
+.home-asterisk:focus-visible,
+.menu-toggle:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.menu-toggle {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.home-asterisk img {
+  height: 48px;
+  width: auto;
+}
+
+.menu-toggle img {
+  height: 48px;
+  width: auto;
+}
+
+.home-mark--desktop,
+.menu-mark--desktop {
+  display: none;
+}
+
+/* Brief 16: desktop internal header — full logo + combined menu asset.
+   Header in-flow height stays locked so centred page titles do not move. */
+@media (min-width: 900px) {
+  .internal-header {
+    height: 58px;
+    padding-top: 22px;
+    padding-left: 22px;
+    padding-right: 22px;
+    overflow: visible;
+  }
+
+  .home-mark--mobile,
+  .menu-mark--mobile {
+    display: none;
+  }
+
+  .home-asterisk .home-mark--desktop {
+    display: block;
+    width: 132px;
+    height: auto;
+  }
+
+  .menu-toggle .menu-mark--desktop {
+    display: block;
+    width: 156px;
+    height: auto;
+  }
+}
+
+.page-title {
+  margin: 20px auto 0;
+  max-width: min(330px, calc(100vw - 60px));
+  padding: 0;
+}
+
+@media (min-width: 900px) {
+  .page-title {
+    max-width: 495px;
+  }
+}
+
+.page-title img {
+  width: 100%;
+  height: auto;
+}
+
+/* Brief 02D: header stays above the pop-up panel. */
+.internal-header {
+  z-index: 2;
+}
+
+.site-menu {
+  position: fixed;
+  z-index: 1;
+  top: calc(70px + env(safe-area-inset-top, 0px));
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 340px;
+  height: 458.73px;
+  margin: 0;
+  padding: 38.5px 0;
+  border: 0;
+  border-radius: 18px;
+  outline: 1px solid #ffffff;
+  outline-offset: 0;
+  background: rgba(0, 24, 72, 0.7);
+  overflow: visible;
+}
+
+.site-menu[hidden] {
+  display: none;
+}
+
+.site-menu a {
+  display: block;
+  flex-shrink: 0;
+  width: 200px;
+  max-width: 200px;
+  line-height: 0;
+}
+
+.site-menu a:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.site-menu a img {
+  width: 100%;
+  height: auto;
+}
+
+.site-menu a[href="/episodes/"] {
+  transform: rotate(-5deg);
+  transform-origin: center center;
+}
+
+.site-menu a[href="/what-the/"] {
+  transform: rotate(-6deg);
+  transform-origin: center center;
+}
+
+.site-menu a[href="/things-im-doing/"] {
+  transform: rotate(-4deg);
+  transform-origin: center center;
+}
+
+.site-menu a[href="/merch/"] {
+  transform: rotate(-5deg);
+  transform-origin: center center;
+}
+
+.site-menu a[href="/contact/"] {
+  transform: rotate(-7deg) scale(0.8075);
+  transform-origin: center center;
+  margin-top: 5px;
+}
+
+/* Brief 22: desktop opened menu sits under the top-right trigger. */
+@media (min-width: 900px) {
+  .site-menu {
+    top: 192px;
+    left: auto;
+    right: 22px;
+    transform: none;
+  }
+}
+
+/* Brief 03A: temporary mobile content on Things I’m Doing + Merch only. */
+.temp-content {
+  display: none;
+}
+
+@media (max-width: 899px) {
+  html:has(body.temp-page),
+  body.temp-page {
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body.temp-page .internal-header {
+    z-index: 3;
+  }
+
+  body.temp-page .site-menu {
+    z-index: 2;
+  }
+
+  body.temp-page .page-title {
+    position: relative;
+    z-index: 1;
+  }
+
+  .temp-content {
+    display: block;
+    min-height: 560px;
+  }
+
+  .temp-paul,
+  .temp-copy {
+    position: absolute;
+    height: auto;
+    pointer-events: none;
+  }
+
+  .temp-paul {
+    width: auto;
+    height: 486px;
+    z-index: 0;
+  }
+
+  .temp-paul--left {
+    top: 208px;
+    left: -78px;
+  }
+
+  .temp-paul--right {
+    top: 186px;
+    right: -78px;
+  }
+
+  .temp-copy {
+    width: 255px;
+    z-index: 0;
+  }
+
+  .temp-copy--things {
+    top: 248px;
+    right: 24px;
+  }
+
+  .temp-copy--merch {
+    top: 226px;
+    left: 24px;
+  }
+}
+
+/* Brief 17: desktop Things I'm Doing + Merch composite panels. Hidden on mobile. */
+.desktop-temp-panel {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .desktop-temp-panel {
+    display: block;
+    width: 520px;
+    max-width: calc(100vw - 80px);
+    height: auto;
+    margin: 46px auto 0;
+  }
+}
+
+/* Brief 05: mobile Contact form only. Locked shell rules stay above. */
+.contact-form,
+.contact-success {
+  display: none;
+}
+
+.contact-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.contact-desktop-label,
+.contact-send-label--desktop {
+  display: none;
+}
+
+@media (max-width: 899px) {
+  .contact-form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 48px);
+    max-width: 342px;
+    margin: 78px auto 40px;
+    gap: 17px;
+  }
+
+  .contact-form[hidden] {
+    display: none;
+  }
+
+  .contact-success {
+    display: none;
+  }
+
+  .contact-success:not([hidden]) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: calc(100% - 48px);
+    max-width: 342px;
+    min-height: calc(
+      100dvh - 162px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)
+    );
+    margin: 0 auto;
+    padding: 8px 8px 40px;
+    color: #ffffff;
+    text-align: center;
+    font-family: system-ui, -apple-system, sans-serif;
+    animation: contact-success-in 0.35s ease;
+  }
+
+  .contact-success-kicker,
+  .contact-success-thanks,
+  .contact-success-hint {
+    margin: 0;
+    color: #ffffff;
+  }
+
+  .contact-success-kicker {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: 0.04em;
+  }
+
+  .contact-success-thanks {
+    margin-top: 16px;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  .contact-success-hint {
+    margin-top: 28px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.45;
+  }
+
+  @keyframes contact-success-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .contact-visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .contact-field,
+  .contact-phone {
+    display: block;
+    margin: 0;
+  }
+
+  .contact-phone {
+    display: flex;
+    gap: 10px;
+  }
+
+  .contact-field--dial {
+    width: 128px;
+    flex: 0 0 128px;
+  }
+
+  .contact-field--number {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    display: block;
+    width: 100%;
+    height: 48px;
+    margin: 0;
+    padding: 0 14px;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+    background: rgba(0, 24, 72, 0.28);
+    color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.3;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  .contact-form select {
+    padding-right: 32px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='white' d='M1.2.8 6 5.6 10.8.8 12 2 6 8 0 2z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px 8px;
+  }
+
+  .contact-form textarea {
+    height: 164px;
+    padding: 12px 14px;
+    resize: vertical;
+  }
+
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder {
+    color: #ffffff;
+    opacity: 1;
+  }
+
+  .contact-form input:focus-visible,
+  .contact-form select:focus-visible,
+  .contact-form textarea:focus-visible,
+  .contact-send:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+  }
+
+  .contact-word-count {
+    margin: -4px 2px 0;
+    color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 13px;
+  }
+
+  .contact-word-count.is-over {
+    font-weight: 700;
+  }
+
+  .contact-hp {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .contact-send {
+    height: 48px;
+    margin: 4px 0 0;
+    padding: 0 16px;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+    background: rgba(0, 24, 72, 0.28);
+    color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+  }
+
+  .contact-send:disabled {
+    opacity: 0.65;
+    cursor: default;
+  }
+
+  .contact-status {
+    width: calc(100% - 48px);
+    max-width: 342px;
+    margin: 78px auto 40px;
+    color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+}
+
+/* Brief 18: desktop Contact form + MESSAGE SENT. Mobile rules above stay locked. */
+@media (min-width: 900px) {
+  .contact-form {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas:
+      "name email"
+      "phone type"
+      "message message"
+      "count count"
+      "send send";
+    width: 720px;
+    max-width: calc(100vw - 80px);
+    margin: 0 auto;
+    padding: 24px 0;
+    flex: 1 1 auto;
+    align-content: center;
+    column-gap: 20px;
+    row-gap: 16px;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .contact-form[hidden] {
+    display: none;
+  }
+
+  .contact-field--name {
+    grid-area: name;
+  }
+
+  .contact-field--email {
+    grid-area: email;
+  }
+
+  .contact-phone {
+    grid-area: phone;
+  }
+
+  .contact-field--subject {
+    grid-area: type;
+  }
+
+  .contact-field--message {
+    grid-area: message;
+  }
+
+  .contact-word-count {
+    grid-area: count;
+  }
+
+  .contact-send {
+    grid-area: send;
+  }
+
+  .contact-success {
+    display: none;
+  }
+
+  .contact-success:not([hidden]) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    flex: 1 1 auto;
+    width: 720px;
+    max-width: calc(100vw - 80px);
+    margin: 0 auto;
+    padding: 48px 8px 40px;
+    color: #ffffff;
+    text-align: center;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  .contact-success-kicker,
+  .contact-success-thanks,
+  .contact-success-hint {
+    margin: 0;
+    color: #ffffff;
+  }
+
+  .contact-success-kicker {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: 0.06em;
+  }
+
+  .contact-success-thanks {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  .contact-success-hint {
+    margin-top: 32px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.45;
+  }
+
+  .contact-desktop-label {
+    display: block;
+    margin: 0 0 8px 2px;
+    color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+
+  .contact-field {
+    display: block;
+    margin: 0;
+    min-width: 0;
+  }
+
+  .contact-field--subject {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto 48px;
+    align-items: start;
+    row-gap: 8px;
+  }
+
+  .contact-phone {
+    display: grid;
+    grid-template-columns: 118px minmax(0, 1fr);
+    grid-template-rows: auto 48px;
+    align-items: start;
+    column-gap: 10px;
+    row-gap: 8px;
+    margin: 0;
+    min-width: 0;
+  }
+
+  .contact-phone .contact-desktop-label,
+  .contact-field--subject .contact-desktop-label {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    margin-bottom: 0;
+  }
+
+  .contact-field--dial {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .contact-field--number {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .contact-field--dial,
+  .contact-field--number {
+    width: auto;
+    min-width: 0;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    display: block;
+    width: 100%;
+    height: 48px;
+    margin: 0;
+    padding: 0 14px;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+    background: rgba(0, 24, 72, 0.28);
+    color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.3;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  .contact-form select {
+    padding-right: 32px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='white' d='M1.2.8 6 5.6 10.8.8 12 2 6 8 0 2z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px 8px;
+  }
+
+  .contact-form textarea {
+    height: 140px;
+    padding: 12px 14px;
+    resize: vertical;
+  }
+
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder {
+    color: #ffffff;
+    opacity: 1;
+  }
+
+  .contact-form input:focus-visible,
+  .contact-form select:focus-visible,
+  .contact-form textarea:focus-visible,
+  .contact-send:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+  }
+
+  .contact-word-count {
+    margin: -6px 2px 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 12px;
+    text-align: right;
+  }
+
+  .contact-word-count.is-over {
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  .contact-hp {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .contact-send {
+    justify-self: center;
+    width: 200px;
+    height: 48px;
+    margin: 4px 0 0;
+    padding: 0 16px;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+    background: rgba(0, 24, 72, 0.28);
+    color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+  }
+
+  .contact-send-label--mobile {
+    display: none;
+  }
+
+  .contact-send-label--desktop {
+    display: inline;
+  }
+
+  .contact-send:disabled {
+    opacity: 0.65;
+    cursor: default;
+  }
+
+  .contact-status {
+    width: 720px;
+    max-width: calc(100vw - 80px);
+    margin: 0 auto 28px;
+    color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: center;
+  }
+}
+
+/* Brief 08: mobile What The? core copy only. Locked shell rules stay above. */
+.what-the-copy {
+  display: none;
+}
+
+@media (max-width: 899px) {
+  .what-the-copy {
+    display: block;
+    width: calc(100% - 60px);
+    max-width: 330px;
+    margin: 24px auto 0;
+    color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .what-the-copy p {
+    margin: 0 0 16px;
+  }
+
+  .what-the-copy p:has(+ .what-the-break) {
+    margin-bottom: 0;
+  }
+
+  .what-the-break {
+    display: block;
+    width: 85%;
+    height: auto;
+    margin: 22px auto 28px;
+  }
+
+  .what-the-copy p:has(+ .what-the-platforms) {
+    margin-bottom: 0;
+  }
+
+  .what-the-platforms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    margin: 25px auto;
+  }
+
+  .what-the-platforms img {
+    display: block;
+    width: 60px;
+    height: auto;
+  }
+
+  .what-the-copy p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Brief 19: desktop What The? editorial content. Mobile rules above stay locked. */
+@media (min-width: 900px) {
+  .what-the-copy {
+    display: block;
+    box-sizing: border-box;
+    width: 860px;
+    max-width: calc(100vw - 80px);
+    margin: 52px auto 48px;
+    color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 19px;
+    line-height: 1.6;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .what-the-copy p {
+    margin: 0 0 22px;
+  }
+
+  .what-the-copy p:has(+ .what-the-break) {
+    margin-bottom: 0;
+  }
+
+  .what-the-break {
+    display: block;
+    width: 680px;
+    max-width: 100%;
+    height: auto;
+    margin: 36px auto 40px;
+  }
+
+  .what-the-copy p:has(+ .what-the-platforms) {
+    margin-bottom: 0;
+  }
+
+  .what-the-platforms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    margin: 36px auto;
+  }
+
+  .what-the-platforms img {
+    display: block;
+    width: 84px;
+    height: auto;
+  }
+
+  .what-the-copy p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Brief 13B: short internal pages keep the footer at the viewport bottom.
+   Long pages still grow in normal document flow. Not fixed/sticky/absolute. */
+@media (max-width: 899px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+  }
+
+  .site-footer {
+    margin-top: auto;
+    flex-shrink: 0;
+  }
+}
+
+/* Brief 14B: mobile Episodes directory composition. Locked shell rules stay above. */
+.episodes-list {
+  display: none;
+}
+
+.episode-platforms a {
+  display: block;
+  line-height: 0;
+  text-decoration: none;
+}
+
+@media (max-width: 899px) {
+  html:has(.episodes-list),
+  body:has(.episodes-list) {
+    overflow-x: hidden;
+  }
+
+  .episodes-list {
+    display: block;
+    width: calc(100% - 28px);
+    max-width: 362px;
+    margin: 32px auto 0;
+    color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  .episode-item {
+    display: grid;
+    grid-template-columns: 56% minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    column-gap: 10px;
+    row-gap: 28px;
+    align-items: center;
+    margin: 0;
+  }
+
+  .episode-brand {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    position: relative;
+    left: calc((100vw - 100%) / 2 - 20px);
+  }
+
+  .episode-art {
+    grid-column: 1;
+    grid-row: 2;
+    display: block;
+    width: 94%;
+    height: auto;
+    margin-top: 0;
+  }
+
+  .episode-item--podcast .episode-art {
+    transform: rotate(-5.5deg);
+    transform-origin: center center;
+  }
+
+  .episode-item--youtube .episode-art {
+    width: 100%;
+    margin-top: 0;
+    transform: rotate(-5deg);
+    transform-origin: center center;
+  }
+
+  .episode-text {
+    grid-column: 2;
+    grid-row: 2;
+    min-width: 0;
+    padding-top: 0;
+    text-align: center;
+  }
+
+  .episode-number,
+  .episode-name {
+    margin: 0;
+  }
+
+  .episode-number {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .episode-name {
+    margin-top: 2px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .episode-platforms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 26px;
+  }
+
+  .episode-platforms img {
+    display: block;
+    width: 40px;
+    height: auto;
+  }
+
+  .episode-divider {
+    display: block;
+    width: 86%;
+    height: 0;
+    margin: 42px auto;
+    border: 0;
+    border-top: 1px solid #ffffff;
+  }
+}
+
+/* Brief 20A: desktop Episodes columns reuse the mobile internal composition. */
+@media (min-width: 900px) {
+  .episodes-list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr);
+    grid-template-rows: auto;
+    align-content: center;
+    align-items: start;
+    column-gap: 36px;
+    box-sizing: border-box;
+    width: 1120px;
+    max-width: calc(100vw - 80px);
+    margin: 0 auto;
+    padding: 40px 0 80px;
+    flex: 1 1 auto;
+    color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .episode-item--podcast {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .episode-item--youtube {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .episode-divider {
+    display: none;
+  }
+
+  .episode-divider:first-of-type {
+    display: block;
+    grid-column: 2;
+    grid-row: 1;
+    align-self: stretch;
+    justify-self: center;
+    width: 1px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    position: relative;
+    box-shadow: none;
+  }
+
+  .episode-divider:first-of-type::after {
+    content: "";
+    position: absolute;
+    top: 17.5%;
+    left: 0;
+    width: 1px;
+    height: 65%;
+    background: #ffffff;
+    box-shadow: none;
+  }
+
+  .episode-item {
+    display: grid;
+    grid-template-columns: 60% minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    column-gap: 16px;
+    row-gap: 28px;
+    align-items: center;
+    min-width: 0;
+    margin: 0;
+  }
+
+  .episode-brand {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    margin: 0;
+    position: static;
+    left: auto;
+  }
+
+  .episode-art {
+    grid-column: 1;
+    grid-row: 2;
+    display: block;
+    height: auto;
+    margin-top: 0;
+  }
+
+  .episode-item--podcast .episode-art {
+    width: 94%;
+    transform: rotate(-5.5deg);
+    transform-origin: center center;
+  }
+
+  .episode-item--youtube .episode-art {
+    width: 100%;
+    transform: rotate(-5deg);
+    transform-origin: center center;
+  }
+
+  .episode-text {
+    grid-column: 2;
+    grid-row: 2;
+    min-width: 0;
+    margin-top: 0;
+    padding-top: 0;
+    text-align: center;
+  }
+
+  .episode-number,
+  .episode-name {
+    margin: 0;
+  }
+
+  .episode-number {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .episode-name {
+    margin-top: 4px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .episode-platforms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 26px;
+  }
+
+  .episode-platforms img {
+    display: block;
+    width: 44px;
+    height: auto;
+  }
+}

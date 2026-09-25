@@ -1,0 +1,118 @@
+/* Shared mobile footer (Brief 12). Hidden on desktop. Not fixed. */
+
+.site-footer {
+  display: none;
+}
+
+@media (max-width: 899px) {
+  .site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding: 36px calc(20px + env(safe-area-inset-right, 0px))
+      calc(18px + env(safe-area-inset-bottom, 0px))
+      calc(20px + env(safe-area-inset-left, 0px));
+    color: rgba(255, 255, 255, 0.75);
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+
+  .site-footer p {
+    margin: 0;
+  }
+
+  /* Landing is a full-viewport poster. Keep that poster intact, then let
+     the shared footer follow it in document flow so it is not overlayed. */
+  html:has(> body > .stage--mobile),
+  html:has(> body > .stage--mobile) body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .stage--mobile {
+    position: relative;
+    inset: auto;
+    height: 100dvh;
+    min-height: 100dvh;
+  }
+}
+
+/* Brief 16B: desktop internal footer.
+   Same in-flow / short-page pin as mobile. Not fixed, sticky, or absolute. */
+@media (min-width: 900px) {
+  body:has(.internal-header) {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+  }
+
+  body:has(.internal-header) .site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: auto;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    flex-shrink: 0;
+    padding: 36px 22px 22px;
+    color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.3;
+    position: static;
+  }
+
+  body:has(.internal-header) .site-footer p {
+    margin: 0;
+  }
+}
+
+/* Brief 16C: same desktop footer on the landing page.
+   Stages stay viewport-fixed so the locked composition does not move.
+   Footer stays in-flow (margin-top: auto) and stacks above the stage. */
+@media (min-width: 900px) and (min-height: 560px) {
+  body:has(> .stage--desktop) {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+  }
+
+  body:has(> .stage--desktop) .site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: auto;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    flex-shrink: 0;
+    padding: 36px 22px 22px;
+    color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.3;
+    position: relative;
+    z-index: 2;
+  }
+
+  body:has(> .stage--desktop) .site-footer p {
+    margin: 0;
+  }
+}
