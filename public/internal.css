@@ -922,6 +922,12 @@ img {
   display: none;
 }
 
+.episode-platforms a {
+  display: block;
+  line-height: 0;
+  text-decoration: none;
+}
+
 @media (max-width: 899px) {
   html:has(.episodes-list),
   body:has(.episodes-list) {
