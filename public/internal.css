@@ -1010,6 +1010,21 @@ img {
   outline-offset: 4px;
 }
 
+.podcast-polaroid {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: rotate(-5deg);
+  transform-origin: center center;
+  box-shadow: 10px 12px 20px rgba(0, 0, 0, 0.28);
+}
+
+.podcast-mark {
+  display: none;
+  height: auto;
+  pointer-events: none;
+}
+
 @media (max-width: 899px) {
   html:has(.podcast-catalogue),
   body:has(.podcast-catalogue) {
@@ -1045,11 +1060,14 @@ img {
   .podcast-episode {
     display: grid;
     grid-template-columns: 112px minmax(0, 1fr);
+    grid-template-rows: auto auto;
     column-gap: 14px;
-    align-items: center;
+    row-gap: 6px;
+    align-items: start;
     margin: 0;
     padding: 22px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    overflow: visible;
   }
 
   .podcast-episode:last-child {
@@ -1063,12 +1081,25 @@ img {
   }
 
   .podcast-polaroid {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    align-self: center;
+    width: calc(100% - 8px);
+    margin: 8px 4px 12px 2px;
+  }
+
+  .podcast-mark {
     display: block;
-    width: 100%;
-    height: auto;
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    width: 128px;
+    max-width: 58%;
   }
 
   .podcast-copy {
+    grid-column: 2;
+    grid-row: 2;
     min-width: 0;
   }
 
@@ -1155,11 +1186,14 @@ img {
   .podcast-episode {
     display: grid;
     grid-template-columns: 188px minmax(0, 1fr);
+    grid-template-rows: auto auto;
     column-gap: 32px;
-    align-items: center;
+    row-gap: 10px;
+    align-items: start;
     margin: 0;
     padding: 36px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    overflow: visible;
   }
 
   .podcast-episode:last-child {
@@ -1173,12 +1207,25 @@ img {
   }
 
   .podcast-polaroid {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    align-self: center;
+    width: calc(100% - 12px);
+    margin: 10px 8px 16px 4px;
+  }
+
+  .podcast-mark {
     display: block;
-    width: 100%;
-    height: auto;
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    width: 248px;
+    max-width: 46%;
   }
 
   .podcast-copy {
+    grid-column: 2;
+    grid-row: 2;
     min-width: 0;
   }
 
