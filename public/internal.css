@@ -944,7 +944,7 @@ img {
   pointer-events: none;
   transform: rotate(-5deg);
   transform-origin: center center;
-  box-shadow: 10px 12px 20px rgba(0, 0, 0, 0.28);
+  filter: drop-shadow(7px 9px 7px rgba(0, 0, 0, 0.25));
 }
 
 .episodes-chooser-note {
