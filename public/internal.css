@@ -923,8 +923,11 @@ img {
 }
 
 .episodes-chooser a {
-  display: block;
-  line-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 18px 16px 4px;
   text-decoration: none;
   cursor: pointer;
 }
@@ -939,6 +942,28 @@ img {
   width: 100%;
   height: auto;
   pointer-events: none;
+  transform: rotate(-5deg);
+  transform-origin: center center;
+  box-shadow: 10px 12px 20px rgba(0, 0, 0, 0.28);
+}
+
+.episodes-chooser-note {
+  display: block;
+  margin: 22px 8px 0;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.episodes-chooser-note--soon {
+  margin-top: 24px;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
 }
 
 @media (max-width: 899px) {
@@ -951,11 +976,12 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 56px;
-    width: calc(100% - 48px);
+    gap: 64px;
+    width: calc(100% - 40px);
     max-width: 330px;
     margin: 56px auto 0;
-    padding: 0 0 24px;
+    padding: 8px 0 32px;
+    overflow: visible;
   }
 
   .episodes-chooser a {
@@ -968,19 +994,28 @@ img {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 96px;
     box-sizing: border-box;
     width: 1120px;
     max-width: calc(100vw - 80px);
     margin: 88px auto 0;
-    padding: 0 0 80px;
+    padding: 12px 0 80px;
+    overflow: visible;
   }
 
   .episodes-chooser a {
     width: 460px;
     max-width: calc(50% - 48px);
     flex: 0 1 460px;
+  }
+
+  .episodes-chooser-note {
+    font-size: 17px;
+  }
+
+  .episodes-chooser-note--soon {
+    font-size: 32px;
   }
 
   .episodes-chooser a:hover {
