@@ -917,268 +917,73 @@ img {
   }
 }
 
-/* Brief 14B: mobile Episodes directory composition. Locked shell rules stay above. */
-.episodes-list {
+/* Episodes landing: two category choices only. Locked shell rules stay above. */
+.episodes-chooser {
   display: none;
 }
 
-.episode-platforms a {
+.episodes-chooser a {
   display: block;
   line-height: 0;
   text-decoration: none;
+  cursor: pointer;
+}
+
+.episodes-chooser a:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 6px;
+}
+
+.episodes-chooser img {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
 }
 
 @media (max-width: 899px) {
-  html:has(.episodes-list),
-  body:has(.episodes-list) {
+  html:has(.episodes-chooser),
+  body:has(.episodes-chooser) {
     overflow-x: hidden;
   }
 
-  .episodes-list {
-    display: block;
-    width: calc(100% - 28px);
-    max-width: 362px;
-    margin: 32px auto 0;
-    color: #ffffff;
-    font-family: system-ui, -apple-system, sans-serif;
-  }
-
-  .episode-item {
-    display: grid;
-    grid-template-columns: 56% minmax(0, 1fr);
-    grid-template-rows: auto auto;
-    column-gap: 10px;
-    row-gap: 28px;
-    align-items: center;
-    margin: 0;
-  }
-
-  .episode-brand {
-    grid-column: 1 / -1;
-    grid-row: 1;
-    display: block;
-    width: 100%;
-    height: auto;
-    margin: 0;
-    position: relative;
-    left: calc((100vw - 100%) / 2 - 20px);
-  }
-
-  .episode-art {
-    grid-column: 1;
-    grid-row: 2;
-    display: block;
-    width: 94%;
-    height: auto;
-    margin-top: 0;
-  }
-
-  .episode-item--podcast .episode-art {
-    transform: rotate(-5.5deg);
-    transform-origin: center center;
-  }
-
-  .episode-item--youtube .episode-art {
-    width: 100%;
-    margin-top: 0;
-    transform: rotate(-5deg);
-    transform-origin: center center;
-  }
-
-  .episode-text {
-    grid-column: 2;
-    grid-row: 2;
-    min-width: 0;
-    padding-top: 0;
-    text-align: center;
-  }
-
-  .episode-number,
-  .episode-name {
-    margin: 0;
-  }
-
-  .episode-number {
-    font-size: 17px;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-
-  .episode-name {
-    margin-top: 2px;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-
-  .episode-platforms {
+  .episodes-chooser {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
-    margin-top: 26px;
+    gap: 56px;
+    width: calc(100% - 48px);
+    max-width: 330px;
+    margin: 56px auto 0;
+    padding: 0 0 24px;
   }
 
-  .episode-platforms img {
-    display: block;
-    width: 40px;
-    height: auto;
-  }
-
-  .episode-divider {
-    display: block;
-    width: 86%;
-    height: 0;
-    margin: 42px auto;
-    border: 0;
-    border-top: 1px solid #ffffff;
+  .episodes-chooser a {
+    width: 100%;
   }
 }
 
-/* Brief 20A: desktop Episodes columns reuse the mobile internal composition. */
 @media (min-width: 900px) {
-  .episodes-list {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr);
-    grid-template-rows: auto;
-    align-content: center;
-    align-items: start;
-    column-gap: 36px;
+  .episodes-chooser {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 96px;
     box-sizing: border-box;
     width: 1120px;
     max-width: calc(100vw - 80px);
-    margin: 0 auto;
-    padding: 40px 0 80px;
-    flex: 1 1 auto;
-    color: #ffffff;
-    font-family: system-ui, -apple-system, sans-serif;
-    background: transparent;
-    border: 0;
-    box-shadow: none;
+    margin: 88px auto 0;
+    padding: 0 0 80px;
   }
 
-  .episode-item--podcast {
-    grid-column: 1;
-    grid-row: 1;
+  .episodes-chooser a {
+    width: 460px;
+    max-width: calc(50% - 48px);
+    flex: 0 1 460px;
   }
 
-  .episode-item--youtube {
-    grid-column: 3;
-    grid-row: 1;
-  }
-
-  .episode-divider {
-    display: none;
-  }
-
-  .episode-divider:first-of-type {
-    display: block;
-    grid-column: 2;
-    grid-row: 1;
-    align-self: stretch;
-    justify-self: center;
-    width: 1px;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    position: relative;
-    box-shadow: none;
-  }
-
-  .episode-divider:first-of-type::after {
-    content: "";
-    position: absolute;
-    top: 17.5%;
-    left: 0;
-    width: 1px;
-    height: 65%;
-    background: #ffffff;
-    box-shadow: none;
-  }
-
-  .episode-item {
-    display: grid;
-    grid-template-columns: 60% minmax(0, 1fr);
-    grid-template-rows: auto auto;
-    column-gap: 16px;
-    row-gap: 28px;
-    align-items: center;
-    min-width: 0;
-    margin: 0;
-  }
-
-  .episode-brand {
-    grid-column: 1 / -1;
-    grid-row: 1;
-    display: block;
-    width: 100%;
-    max-width: none;
-    height: auto;
-    margin: 0;
-    position: static;
-    left: auto;
-  }
-
-  .episode-art {
-    grid-column: 1;
-    grid-row: 2;
-    display: block;
-    height: auto;
-    margin-top: 0;
-  }
-
-  .episode-item--podcast .episode-art {
-    width: 94%;
-    transform: rotate(-5.5deg);
-    transform-origin: center center;
-  }
-
-  .episode-item--youtube .episode-art {
-    width: 100%;
-    transform: rotate(-5deg);
-    transform-origin: center center;
-  }
-
-  .episode-text {
-    grid-column: 2;
-    grid-row: 2;
-    min-width: 0;
-    margin-top: 0;
-    padding-top: 0;
-    text-align: center;
-  }
-
-  .episode-number,
-  .episode-name {
-    margin: 0;
-  }
-
-  .episode-number {
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-
-  .episode-name {
-    margin-top: 4px;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-
-  .episode-platforms {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    margin-top: 26px;
-  }
-
-  .episode-platforms img {
-    display: block;
-    width: 44px;
-    height: auto;
+  .episodes-chooser a:hover {
+    opacity: 0.88;
   }
 }
