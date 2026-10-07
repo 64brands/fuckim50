@@ -1407,22 +1407,22 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 28px;
-  }
-
-  .episode-detail .podcast-polaroid {
-    width: min(220px, 72%);
-    margin: 8px 0 0;
-  }
-
-  .episode-hero-copy {
-    width: 100%;
+    gap: 0;
   }
 
   .episode-mark {
     width: 168px;
     max-width: 70%;
-    margin: 0 0 18px auto;
+    margin: 4px 0 16px;
+  }
+
+  .episode-detail .podcast-polaroid {
+    width: min(198px, 64.8%);
+    margin: 0 0 24px;
+  }
+
+  .episode-hero-copy {
+    width: 100%;
   }
 
   .episode-kicker {
@@ -1495,19 +1495,31 @@ img {
   .episode-hero {
     display: grid;
     grid-template-columns: 240px minmax(0, 1fr);
+    grid-template-rows: auto auto;
     column-gap: 56px;
     align-items: start;
   }
 
   .episode-detail .podcast-polaroid {
+    grid-column: 1;
+    grid-row: 1 / -1;
     width: calc(100% - 12px);
     margin: 12px 6px 8px 4px;
   }
 
   .episode-mark {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: start;
     width: 210px;
     max-width: 46%;
-    margin: 0 0 22px auto;
+    margin: 0 0 22px 0;
+  }
+
+  .episode-hero-copy {
+    grid-column: 2;
+    grid-row: 2;
+    min-width: 0;
   }
 
   .episode-kicker {
