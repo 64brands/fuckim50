@@ -1406,17 +1406,19 @@ img {
   .episode-hero {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     gap: 0;
   }
 
   .episode-mark {
-    width: 168px;
-    max-width: 70%;
+    align-self: flex-end;
+    width: 184.8px;
+    max-width: 80%;
     margin: 4px 0 16px;
   }
 
   .episode-detail .podcast-polaroid {
+    align-self: flex-start;
     width: min(198px, 64.8%);
     margin: 0 0 24px;
   }
