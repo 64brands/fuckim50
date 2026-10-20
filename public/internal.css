@@ -1580,3 +1580,326 @@ img {
     margin-top: 16px;
   }
 }
+
+/* Guest information page. Does not restyle other internals. */
+.guest-page {
+  display: block;
+  box-sizing: border-box;
+  width: calc(100% - 40px);
+  max-width: 640px;
+  margin: 20px auto 0;
+  padding: 0 0 48px;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.guest-section {
+  margin: 0 0 40px;
+  padding: 0;
+}
+
+.guest-section:last-of-type {
+  margin-bottom: 0;
+}
+
+.guest-page .guest-kicker {
+  margin: 0;
+  color: #fef603;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.guest-title {
+  margin: 8px 0 16px;
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.guest-section p {
+  margin: 0 0 14px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.guest-section p:last-child {
+  margin-bottom: 0;
+}
+
+.guest-subhead {
+  margin: 22px 0 12px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.guest-facts {
+  display: grid;
+  gap: 16px;
+  margin: 0 0 18px;
+}
+
+.guest-fact {
+  margin: 0;
+}
+
+.guest-fact dt {
+  margin: 0 0 4px;
+  color: #fef603;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+}
+
+.guest-fact dd {
+  margin: 0;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.guest-signoff {
+  margin: 32px 0 0;
+}
+
+.guest-signoff p {
+  margin: 0;
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+.guest-signoff-name {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.guest-signoff-role,
+.guest-signoff-show {
+  margin-top: 4px;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.guest-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  margin: 24px 0 0;
+}
+
+.guest-form[hidden] {
+  display: none;
+}
+
+.guest-success {
+  display: none;
+  margin: 24px 0 0;
+  color: #ffffff;
+}
+
+.guest-success:not([hidden]) {
+  display: block;
+}
+
+.guest-success .contact-success-kicker,
+.guest-success .contact-success-thanks {
+  margin: 0;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.guest-success .contact-success-kicker {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+
+.guest-success .contact-success-thanks {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.guest-form input,
+.guest-form textarea {
+  display: block;
+  width: 100%;
+  height: 48px;
+  margin: 0;
+  padding: 0 14px;
+  border: 1px solid #ffffff;
+  border-radius: 12px;
+  background: rgba(0, 24, 72, 0.28);
+  color: #ffffff;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.3;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.guest-form textarea {
+  height: 164px;
+  padding: 12px 14px;
+  resize: vertical;
+}
+
+.guest-form input::placeholder,
+.guest-form textarea::placeholder {
+  color: #ffffff;
+  opacity: 1;
+}
+
+.guest-form input:focus-visible,
+.guest-form textarea:focus-visible,
+.guest-send:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.guest-word-count {
+  margin: -4px 2px 0;
+  color: #ffffff;
+  font-size: 13px;
+}
+
+.guest-word-count.is-over {
+  font-weight: 700;
+}
+
+.guest-hp {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.guest-send {
+  height: 48px;
+  margin: 4px 0 0;
+  padding: 0 16px;
+  border: 1px solid #ffffff;
+  border-radius: 12px;
+  background: rgba(0, 24, 72, 0.28);
+  color: #ffffff;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+
+.guest-send:disabled {
+  opacity: 0.65;
+  cursor: default;
+}
+
+.guest-status {
+  margin: 12px 0 0;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.guest-status.is-error {
+  font-weight: 600;
+}
+
+@media (min-width: 900px) {
+  .guest-page {
+    width: 760px;
+    max-width: calc(100vw - 80px);
+    margin: 28px auto 0;
+    padding: 0 0 80px;
+  }
+
+  .guest-section {
+    margin-bottom: 52px;
+  }
+
+  .guest-page .guest-kicker {
+    font-size: 14px;
+  }
+
+  .guest-title {
+    margin: 10px 0 18px;
+    font-size: 36px;
+    line-height: 1.12;
+  }
+
+  .guest-section p {
+    margin-bottom: 16px;
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+  .guest-subhead {
+    margin: 28px 0 14px;
+    font-size: 20px;
+  }
+
+  .guest-facts {
+    gap: 18px;
+    margin-bottom: 20px;
+  }
+
+  .guest-fact dt {
+    font-size: 14px;
+  }
+
+  .guest-fact dd {
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+  .guest-signoff {
+    margin-top: 40px;
+  }
+
+  .guest-signoff-name {
+    font-size: 20px;
+  }
+
+  .guest-signoff-role,
+  .guest-signoff-show {
+    font-size: 16px;
+  }
+
+  .guest-form {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 20px;
+    row-gap: 16px;
+    margin-top: 28px;
+  }
+
+  .guest-field--name {
+    grid-column: 1;
+  }
+
+  .guest-field--email {
+    grid-column: 2;
+  }
+
+  .guest-field--phone,
+  .guest-field--message,
+  .guest-word-count,
+  .guest-send {
+    grid-column: 1 / -1;
+  }
+}
