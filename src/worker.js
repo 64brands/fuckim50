@@ -18,6 +18,14 @@ function isContactApi(pathname) {
   return pathname === "/api/contact" || pathname === "/api/contact/";
 }
 
+function isRetiredThingsPath(pathname) {
+  return (
+    pathname === "/things-im-doing" ||
+    pathname === "/things-im-doing/" ||
+    pathname.indexOf("/things-im-doing/") === 0
+  );
+}
+
 function json(body, status, extraHeaders) {
   return new Response(JSON.stringify(body), {
     status: status,
@@ -231,6 +239,9 @@ export default {
         return env.CONTACT.fetch(request);
       }
       return handleContact(request, env);
+    }
+    if (isRetiredThingsPath(url.pathname)) {
+      return Response.redirect(new URL("/guest", url.origin).toString(), 301);
     }
     return env.ASSETS.fetch(request);
   },

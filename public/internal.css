@@ -179,7 +179,7 @@ img {
   transform-origin: center center;
 }
 
-.site-menu a[href="/things-im-doing/"] {
+.site-menu a[href="/guest/"] {
   transform: rotate(-4deg);
   transform-origin: center center;
 }
@@ -205,7 +205,7 @@ img {
   }
 }
 
-/* Brief 03A: temporary mobile content on Things I’m Doing + Merch only. */
+/* Brief 03A: temporary mobile content on Merch. */
 .temp-content {
   display: none;
 }
@@ -248,11 +248,6 @@ img {
     z-index: 0;
   }
 
-  .temp-paul--left {
-    top: 208px;
-    left: -78px;
-  }
-
   .temp-paul--right {
     top: 186px;
     right: -78px;
@@ -263,18 +258,13 @@ img {
     z-index: 0;
   }
 
-  .temp-copy--things {
-    top: 248px;
-    right: 24px;
-  }
-
   .temp-copy--merch {
     top: 226px;
     left: 24px;
   }
 }
 
-/* Brief 17: desktop Things I'm Doing + Merch composite panels. Hidden on mobile. */
+/* Brief 17: desktop Merch composite panel. Hidden on mobile. */
 .desktop-temp-panel {
   display: none;
 }
