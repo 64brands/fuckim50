@@ -26,6 +26,30 @@ function isRetiredThingsPath(pathname) {
   );
 }
 
+function isFormerBrandHost(hostname) {
+  var host = String(hostname || "").toLowerCase();
+  return (
+    host === "fuckim50.show" ||
+    host === "www.fuckim50.show" ||
+    host === "www.fi50.show"
+  );
+}
+
+function canonicalRedirectTarget(url) {
+  var host = url.hostname.toLowerCase();
+  var next = new URL(url.toString());
+  var changed = false;
+  if (isFormerBrandHost(host)) {
+    next.protocol = "https:";
+    next.hostname = "fi50.show";
+    changed = true;
+  } else if (host === "fi50.show" && next.protocol === "http:") {
+    next.protocol = "https:";
+    changed = true;
+  }
+  return changed ? next.toString() : null;
+}
+
 function json(body, status, extraHeaders) {
   return new Response(JSON.stringify(body), {
     status: status,
@@ -241,7 +265,16 @@ export default {
       return handleContact(request, env);
     }
     if (isRetiredThingsPath(url.pathname)) {
-      return Response.redirect(new URL("/guest", url.origin).toString(), 301);
+      var guest = new URL("/guest/", url.origin);
+      if (isFormerBrandHost(url.hostname) || url.hostname.toLowerCase() === "fi50.show") {
+        guest.protocol = "https:";
+        guest.hostname = "fi50.show";
+      }
+      return Response.redirect(guest.toString(), 301);
+    }
+    var canonicalTarget = canonicalRedirectTarget(url);
+    if (canonicalTarget) {
+      return Response.redirect(canonicalTarget, 301);
     }
     return env.ASSETS.fetch(request);
   },

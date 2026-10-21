@@ -4,20 +4,56 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="index, follow" />
-    <title>HOME | FI50 Show</title>
-    <meta name="description" content="FI50 Show — the podcast." />
+    <title>Fi50 — F*CK! I’M 50</title>
+    <meta
+      name="description"
+      content="Fi50 is Paul Burfitt’s podcast, F*CK! I’M 50. It starts with a simple question: where the bloody hell did the last 20 years go?"
+    />
     <link rel="canonical" href="https://fi50.show/" />
-    <meta property="og:site_name" content="FI50 Show" />
-    <meta property="og:title" content="HOME | FI50 Show" />
-    <meta property="og:description" content="FI50 Show — the podcast." />
+    <meta property="og:site_name" content="Fi50" />
+    <meta property="og:title" content="Fi50 — F*CK! I’M 50" />
+    <meta
+      property="og:description"
+      content="Fi50 is Paul Burfitt’s podcast, F*CK! I’M 50. It starts with a simple question: where the bloody hell did the last 20 years go?"
+    />
     <meta property="og:url" content="https://fi50.show/" />
     <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://fi50.show/assets/FI50-LOGO-MASTER.png" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "FI50 Show",
-        "url": "https://fi50.show/"
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://fi50.show/#website",
+            "name": "Fi50",
+            "alternateName": "F*CK! I’M 50",
+            "url": "https://fi50.show/",
+            "publisher": {
+              "@id": "https://fi50.show/#paul-burfitt"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://fi50.show/#paul-burfitt",
+            "name": "Paul Burfitt",
+            "url": "https://fi50.show/"
+          },
+          {
+            "@type": "PodcastSeries",
+            "@id": "https://fi50.show/episodes/podcast/#podcast",
+            "name": "Fi50",
+            "alternateName": "F*CK! I’M 50",
+            "url": "https://fi50.show/episodes/podcast/",
+            "webFeed": "https://feeds.buzzsprout.com/2651424.rss",
+            "inLanguage": "en-AU",
+            "description": "F*CK! I’M 50 started with a pretty simple question: where the bloody hell did the last 20 years go? One minute you’re busy working, raising kids and dealing with life, the next you wake up and realise — Fuck! I'm 50! Our kids hardly need us anymore, yet our parents need us more than ever before.",
+            "image": "https://fi50.show/assets/FI50-LOGO-MASTER.png",
+            "author": {
+              "@id": "https://fi50.show/#paul-burfitt"
+            }
+          }
+        ]
       }
     </script>
     <link rel="stylesheet" href="/landing.css" />
@@ -50,19 +86,19 @@
           />
         </h1>
         <nav class="poster-nav" aria-label="Landing">
-          <a class="btn btn-episodes" href="/episodes">
+          <a class="btn btn-episodes" href="/episodes/">
             <img src="/assets/episodes-button.svg" alt="Episodes" width="1032" height="337" />
           </a>
-          <a class="btn btn-what-the" href="/what-the">
+          <a class="btn btn-what-the" href="/what-the/">
             <img src="/assets/what-the-button.svg" alt="What The?" width="1015" height="347" />
           </a>
-          <a class="btn btn-things" href="/guest">
+          <a class="btn btn-things" href="/guest/">
             <img src="/assets/become-a-guest-button.svg" alt="Become a Guest" width="1030" height="370" />
           </a>
-          <a class="btn btn-merch" href="/merch">
+          <a class="btn btn-merch" href="/merch/">
             <img src="/assets/merch-button.svg" alt="Merch" width="1037" height="375" />
           </a>
-          <a class="btn btn-contact" href="/contact">
+          <a class="btn btn-contact" href="/contact/">
             <img src="/assets/contact-button.svg" alt="Contact" width="862" height="255" />
           </a>
         </nav>
@@ -96,19 +132,19 @@
           />
         </h1>
         <nav class="poster-nav" aria-label="Landing">
-          <a class="btn btn-episodes" href="/episodes">
+          <a class="btn btn-episodes" href="/episodes/">
             <img src="/assets/episodes-button.svg" alt="Episodes" width="1032" height="337" />
           </a>
-          <a class="btn btn-what-the" href="/what-the">
+          <a class="btn btn-what-the" href="/what-the/">
             <img src="/assets/what-the-button.svg" alt="What The?" width="1015" height="347" />
           </a>
-          <a class="btn btn-things" href="/guest">
+          <a class="btn btn-things" href="/guest/">
             <img src="/assets/become-a-guest-button.svg" alt="Become a Guest" width="1030" height="370" />
           </a>
-          <a class="btn btn-merch" href="/merch">
+          <a class="btn btn-merch" href="/merch/">
             <img src="/assets/merch-button.svg" alt="Merch" width="1037" height="375" />
           </a>
-          <a class="btn btn-contact" href="/contact">
+          <a class="btn btn-contact" href="/contact/">
             <img src="/assets/contact-button.svg" alt="Contact" width="862" height="255" />
           </a>
         </nav>
