@@ -1,4 +1,6 @@
 {
+  // Production Worker fuckim50. Deploy from GitHub main with:
+  // npx wrangler deploy --config wrangler.production.jsonc
   "name": "fuckim50",
   "main": "src/worker.js",
   "compatibility_date": "2026-09-21",

@@ -1,10 +1,17 @@
 {
-  "name": "fuckim50-preview",
+  // Default Wrangler config. Same Worker as wrangler.production.jsonc.
+  // Preview Worker fuckim50-preview has been removed and must not be recreated.
+  // Standard production deploy (from GitHub main):
+  //   npx wrangler deploy --config wrangler.production.jsonc
+  "name": "fuckim50",
   "main": "src/worker.js",
   "compatibility_date": "2026-09-21",
-  "workers_dev": true,
-  "preview_urls": true,
-  "previews": {},
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    { "pattern": "fi50.show", "zone_name": "fi50.show", "custom_domain": true },
+    { "pattern": "fuckim50.show", "zone_name": "fuckim50.show", "custom_domain": true }
+  ],
   "assets": {
     "directory": "./public",
     "binding": "ASSETS",
