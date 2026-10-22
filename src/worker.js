@@ -1,5 +1,5 @@
 /**
- * fuckim50-preview Worker.
+ * Production Worker (fuckim50).
  * Static pages stay on the assets pipeline. /api/contact sends mail via Resend.
  */
 
@@ -11,8 +11,8 @@ var ALLOWED_SUBJECTS = [
   "General Enquiry",
 ];
 
-var CONTACT_TO = "paul@fuckim50.show";
-var CONTACT_FROM = "F*CK! I'M 50 Website <website@send.fuckim50.show>";
+var CONTACT_TO = "paul@fi50.show";
+var CONTACT_FROM = "Fi50 Website <paul@fi50.show>";
 
 function isContactApi(pathname) {
   return pathname === "/api/contact" || pathname === "/api/contact/";
@@ -49,6 +49,13 @@ function wordCount(text) {
 
 function isEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value || "").trim());
+}
+
+function headerSafe(value) {
+  return String(value || "")
+    .replace(/[\0\r\n]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function escapeHtml(value) {
@@ -126,10 +133,10 @@ function formatSubmittedAest(date) {
 
 function buildEmail(body) {
   var submitted = formatSubmittedAest(new Date());
-  var subject = String(body.subject).trim();
-  var name = String(body.name).trim();
-  var email = String(body.email).trim();
-  var phone = String(body.phone).trim();
+  var subject = headerSafe(body.subject);
+  var name = headerSafe(body.name);
+  var email = headerSafe(body.email);
+  var phone = headerSafe(body.phone);
   var message = String(body.message).trim();
   var safeEmail = escapeHtml(email);
 
@@ -161,7 +168,7 @@ function buildEmail(body) {
     escapeHtml(name) +
     "</p>" +
     '<p style="margin:0 0 16px;"><strong>Email:</strong> <a href="mailto:' +
-    email.replace(/"/g, "") +
+    encodeURIComponent(email).replace(/%40/g, "@") +
     '" style="color:#017efe;text-decoration:underline;">' +
     safeEmail +
     "</a></p>" +
@@ -240,9 +247,6 @@ export default {
   async fetch(request, env) {
     var url = new URL(request.url);
     if (isContactApi(url.pathname)) {
-      if (!env.RESEND_API_KEY && env.CONTACT) {
-        return env.CONTACT.fetch(request);
-      }
       return handleContact(request, env);
     }
     if (isRetiredThingsPath(url.pathname)) {
