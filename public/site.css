@@ -964,6 +964,49 @@ a.ep-tile:hover .ep-tile-name {
   line-height: 1.55;
 }
 
+/* Original "Listen on" platform badges (Spotify / Apple Podcasts). */
+.listen-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.listen-badges a {
+  display: block;
+  border-radius: 8px;
+  transition: transform 0.15s ease;
+}
+
+.listen-badges a:hover {
+  transform: translateY(-1px);
+}
+
+.listen-badges img {
+  display: block;
+  width: auto;
+  height: 38px;
+}
+
+.listen-badges--large {
+  margin-top: 24px;
+}
+
+.listen-badges--large img {
+  height: 44px;
+}
+
+@media (max-width: 639px) {
+  .ep-card .listen-badges {
+    gap: 8px;
+  }
+
+  .ep-card .listen-badges img {
+    height: 34px;
+  }
+}
+
 .listen-links {
   display: flex;
   flex-wrap: wrap;
