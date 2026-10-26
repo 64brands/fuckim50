@@ -1,24 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="robots" content="index, follow" />
-    <title>Fi50 — F*CK! I’M 50</title>
-    <meta
-      name="description"
-      content="Fi50 is Paul Burfitt’s podcast, F*CK! I’M 50. It starts with a simple question: where the bloody hell did the last 20 years go?"
-    />
+    <title>*Conditions Apply — with Paul Burfitt</title>
+    <meta name="description" content="*Conditions Apply is Paul Burfitt’s podcast about life’s fine print — honest conversations about the terms and conditions you only discover at this stage of life." />
     <link rel="canonical" href="https://fi50.show/" />
-    <meta property="og:site_name" content="Fi50" />
-    <meta property="og:title" content="Fi50 — F*CK! I’M 50" />
-    <meta
-      property="og:description"
-      content="Fi50 is Paul Burfitt’s podcast, F*CK! I’M 50. It starts with a simple question: where the bloody hell did the last 20 years go?"
-    />
+    <meta property="og:site_name" content="*Conditions Apply" />
+    <meta property="og:title" content="*Conditions Apply — with Paul Burfitt" />
+    <meta property="og:description" content="*Conditions Apply is Paul Burfitt’s podcast about life’s fine print — honest conversations about the terms and conditions you only discover at this stage of life." />
     <meta property="og:url" content="https://fi50.show/" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://fi50.show/assets/FI50-LOGO-MASTER.png" />
+    <meta property="og:image" content="https://fi50.show/assets/og/conditions-apply.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#f5f1e7" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -26,8 +23,11 @@
           {
             "@type": "WebSite",
             "@id": "https://fi50.show/#website",
-            "name": "Fi50",
-            "alternateName": "F*CK! I’M 50",
+            "name": "*Conditions Apply",
+            "alternateName": [
+              "Fi50",
+              "F*CK! I’M 50"
+            ],
             "url": "https://fi50.show/",
             "publisher": {
               "@id": "https://fi50.show/#paul-burfitt"
@@ -42,13 +42,16 @@
           {
             "@type": "PodcastSeries",
             "@id": "https://fi50.show/episodes/podcast/#podcast",
-            "name": "Fi50",
-            "alternateName": "F*CK! I’M 50",
+            "name": "*Conditions Apply",
+            "alternateName": [
+              "Fi50",
+              "F*CK! I’M 50"
+            ],
             "url": "https://fi50.show/episodes/podcast/",
             "webFeed": "https://feeds.buzzsprout.com/2651424.rss",
             "inLanguage": "en-AU",
-            "description": "F*CK! I’M 50 started with a pretty simple question: where the bloody hell did the last 20 years go? One minute you’re busy working, raising kids and dealing with life, the next you wake up and realise — Fuck! I'm 50! Our kids hardly need us anymore, yet our parents need us more than ever before.",
-            "image": "https://fi50.show/assets/FI50-LOGO-MASTER.png",
+            "description": "*Conditions Apply with Paul Burfitt (formerly F*CK! I’M 50) starts with a simple question: where the bloody hell did the last 20 years go? Honest conversations with everyday people about life’s fine print — the terms and conditions you only discover at this stage of life.",
+            "image": "https://fi50.show/assets/og/conditions-apply.jpg",
             "author": {
               "@id": "https://fi50.show/#paul-burfitt"
             }
@@ -56,104 +59,154 @@
         ]
       }
     </script>
-    <link rel="stylesheet" href="/landing.css" />
-    <link rel="stylesheet" href="/footer.css" />
+    <link rel="preload" href="/assets/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/site.css" />
   </head>
   <body>
-    <!-- Mobile composition: approved poster-style Landing page. Hidden on desktop. -->
-    <div class="stage stage--mobile" aria-hidden="false">
-      <div class="artboard artboard--mobile">
-        <img
-          class="logo"
-          src="/assets/FI50-LOGO-MASTER.png"
-          alt="FI50 Show logo"
-          width="1636"
-          height="955"
-        />
-        <img
-          class="paul"
-          src="/assets/Paul-Landing-Page-Hero+Lines.png"
-          alt="Paul, host of FI50 Show"
-          width="512"
-          height="1010"
-        />
-        <h1 class="headline">
-          <img
-            src="/assets/mobile-20years-gone.svg"
-            alt="Where's the last 20 years gone?"
-            width="822"
-            height="638"
-          />
-        </h1>
-        <nav class="poster-nav" aria-label="Landing">
-          <a class="btn btn-episodes" href="/episodes/">
-            <img src="/assets/episodes-button.svg" alt="Episodes" width="1032" height="337" />
-          </a>
-          <a class="btn btn-what-the" href="/what-the/">
-            <img src="/assets/what-the-button.svg" alt="What The?" width="1015" height="347" />
-          </a>
-          <a class="btn btn-things" href="/guest/">
-            <img src="/assets/become-a-guest-button.svg" alt="Become a Guest" width="1030" height="370" />
-          </a>
-          <a class="btn btn-merch" href="/merch/">
-            <img src="/assets/merch-button.svg" alt="Merch" width="1037" height="375" />
-          </a>
-          <a class="btn btn-contact" href="/contact/">
-            <img src="/assets/contact-button.svg" alt="Contact" width="862" height="255" />
-          </a>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap site-header-inner">
+        <a class="wordmark" href="/" aria-label="*Conditions Apply, home"><svg class="wordmark-star" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><rect x="39" y="2" width="22" height="96" rx="1.5"/><rect x="39" y="2" width="22" height="96" rx="1.5" transform="rotate(60 50 50)"/><rect x="39" y="2" width="22" height="96" rx="1.5" transform="rotate(120 50 50)"/></svg><span>Conditions Apply</span></a>
+        <nav class="site-nav" aria-label="Main">
+          <a href="/episodes/">Episodes</a>
+          <a href="/guest/">Become a guest</a>
+          <a href="/what-the/">What the?</a>
+          <a href="/merch/">Merch</a>
+          <a href="/contact/">Contact</a>
+          <a class="btn btn-red" href="/episodes/podcast/">Listen</a>
         </nav>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+          <span class="menu-toggle-label">Menu</span><span class="menu-toggle-bars" aria-hidden="true"></span>
+        </button>
       </div>
-    </div>
+    </header>
+    <nav id="site-menu" class="site-menu" hidden aria-label="Menu">
+      <a href="/" aria-current="page">Home</a>
+      <a href="/episodes/">Episodes</a>
+      <a href="/guest/">Become a guest</a>
+      <a href="/what-the/">What the?</a>
+      <a href="/merch/">Merch</a>
+      <a href="/contact/">Contact</a>
+      <p class="site-menu-fine">*Conditions apply.</p>
+    </nav>
+    <main id="main">
+    <section class="hero" aria-roledescription="carousel" aria-label="Show artwork">
+      <ul class="hero-track">
+        <li class="hero-slide">
+          <picture>
+            <source type="image/webp" srcset="/assets/hero/hero-1-wide-900.webp 900w, /assets/hero/hero-1-wide-1400.webp 1400w, /assets/hero/hero-1-wide-2046.webp 2046w" sizes="(min-width: 2046px) 2046px, 100vw" />
+            <img src="/assets/hero/hero-1-wide-2046.jpg" width="2046" height="768" alt="*Conditions Apply with Paul Burfitt. Half black-and-white city, deadlines and bills; half beach, family, racing and good food." fetchpriority="high" />
+          </picture>
+        </li>
+        <!--
+          Room for up to three artworks. Copy the <li> above for each extra slide:
+          wide art (2046 x 768) for desktop, plus an optional square version for phones
+          (add class "has-square" and a <source media="(max-width: 699px)"> line).
+        -->
+      </ul>
+      <div class="hero-controls" hidden></div>
+    </section>
+      <section class="intro wrap">
+        <h1 class="intro-title">Where the bloody hell did the last 20 years go?</h1>
+        <p class="intro-copy">
+          One minute you’re strolling along, with big plans and all the time in the world. The
+          next you’re staring down 50, or you’ve already passed it, wondering how that just
+          happened. *Conditions Apply is a podcast about life’s fine print — the terms and
+          conditions you only discover once you get here.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-red" href="/episodes/podcast/">Listen to the episodes</a>
+          <a class="btn" href="/guest/">Become a guest</a>
+        </div>
+      </section>
 
-    <!-- Desktop composition: approved Landing page. Hidden on mobile. -->
-    <div class="stage stage--desktop">
-      <div class="desktop-master">
-      <div class="artboard artboard--desktop">
-        <img
-          class="paul"
-          src="/assets/Paul-Landing-Page-Hero+Lines.png"
-          alt="Paul, host of FI50 Show"
-          width="512"
-          height="1010"
-        />
-        <img
-          class="logo-large"
-          src="/assets/FI50-LOGO-MASTER.png"
-          alt=""
-          width="1636"
-          height="955"
-        />
-        <h1 class="headline">
-          <img
-            src="/assets/desktop-20years-gone.svg"
-            alt="Where's the last 20 years gone?"
-            width="1351"
-            height="500"
-          />
-        </h1>
-        <nav class="poster-nav" aria-label="Landing">
-          <a class="btn btn-episodes" href="/episodes/">
-            <img src="/assets/episodes-button.svg" alt="Episodes" width="1032" height="337" />
+      <section class="section wrap" aria-labelledby="latest-title">
+        <div class="section-head">
+          <h2 class="section-title" id="latest-title">Latest episodes</h2>
+          <a class="text-link" href="/episodes/podcast/">All episodes</a>
+        </div>
+        <ul class="ep-grid">
+        <li class="ep-card">
+          <a class="ep-tile" href="/episodes/podcast/sebastian-foti-starting-over-after-divorce/" tabindex="-1" aria-hidden="true">
+            <span class="ep-tile-show"><svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><rect x="39" y="2" width="22" height="96" rx="1.5"/><rect x="39" y="2" width="22" height="96" rx="1.5" transform="rotate(60 50 50)"/><rect x="39" y="2" width="22" height="96" rx="1.5" transform="rotate(120 50 50)"/></svg>Conditions Apply</span>
+            <span class="ep-tile-name">Sebastian Foti</span>
+            <span class="ep-tile-num">6</span>
           </a>
-          <a class="btn btn-what-the" href="/what-the/">
-            <img src="/assets/what-the-button.svg" alt="What The?" width="1015" height="347" />
+          <div class="ep-card-body">
+            <p class="ep-meta"><strong>Episode 6</strong><span>21 Oct 2026</span><span>31 min</span></p>
+            <h3 class="ep-title"><a href="/episodes/podcast/sebastian-foti-starting-over-after-divorce/">Starting Over After Divorce: Sebastian Foti on Fatherhood, Career Change &amp; Midlife</a></h3>
+            <p class="ep-summary">After more than 20 years of marriage, Sebastian found himself navigating divorce, raising three teenagers and rebuilding his life as he approached 50.</p>
+            <div class="listen-links">
+            <a href="https://open.spotify.com/episode/7vGEhRCj0uYQEUK9WZZ1D2" target="_blank" rel="noopener noreferrer" aria-label="Listen to Episode 6 on Spotify">Spotify</a>
+            <a href="https://podcasts.apple.com/us/podcast/starting-over-after-divorce-sebastian-foti-on-fatherhood/id6815575028?i=1000797367384" target="_blank" rel="noopener noreferrer" aria-label="Listen to Episode 6 on Apple Podcasts">Apple Podcasts</a>
+            </div>
+          </div>
+        </li>
+        <li class="ep-card">
+          <a class="ep-tile" href="/episodes/podcast/luke-moulton-creating-a-life-you-dont-want-to-escape/" tabindex="-1" aria-hidden="true">
+            <span class="ep-tile-show"><svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><rect x="39" y="2" width="22" height="96" rx="1.5"/><rect x="39" y="2" width="22" height="96" rx="1.5" transform="rotate(60 50 50)"/><rect x="39" y="2" width="22" height="96" rx="1.5" transform="rotate(120 50 50)"/></svg>Conditions Apply</span>
+            <span class="ep-tile-name">Luke Moulton</span>
+            <span class="ep-tile-num">5</span>
           </a>
-          <a class="btn btn-things" href="/guest/">
-            <img src="/assets/become-a-guest-button.svg" alt="Become a Guest" width="1030" height="370" />
+          <div class="ep-card-body">
+            <p class="ep-meta"><strong>Episode 5</strong><span>9 Oct 2026</span><span>23 min</span></p>
+            <h3 class="ep-title"><a href="/episodes/podcast/luke-moulton-creating-a-life-you-dont-want-to-escape/">Luke Moulton: Creating a Life You Don’t Want to Escape</a></h3>
+            <p class="ep-summary">At the centre of the conversation is a powerful idea: creating a life you don’t want to escape from.</p>
+            <div class="listen-links">
+            <a href="https://podcasts.apple.com/us/podcast/luke-moulton-creating-a-life-you-dont-want-to-escape/id6815575028?i=1000793976807" target="_blank" rel="noopener noreferrer" aria-label="Listen to Episode 5 on Apple Podcasts">Apple Podcasts</a>
+            </div>
+          </div>
+        </li>
+        <li class="ep-card">
+          <a class="ep-tile" href="/episodes/podcast/nancy-dagostino-finding-yourself-after-putting-everyone-else-first/" tabindex="-1" aria-hidden="true">
+            <span class="ep-tile-show"><svg class="" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><rect x="39" y="2" width="22" height="96" rx="1.5"/><rect x="39" y="2" width="22" height="96" rx="1.5" transform="rotate(60 50 50)"/><rect x="39" y="2" width="22" height="96" rx="1.5" transform="rotate(120 50 50)"/></svg>Conditions Apply</span>
+            <span class="ep-tile-name">Nancy D’Agostino</span>
+            <span class="ep-tile-num">4</span>
           </a>
-          <a class="btn btn-merch" href="/merch/">
-            <img src="/assets/merch-button.svg" alt="Merch" width="1037" height="375" />
-          </a>
-          <a class="btn btn-contact" href="/contact/">
-            <img src="/assets/contact-button.svg" alt="Contact" width="862" height="255" />
-          </a>
-        </nav>
-      </div>
-      </div>
-    </div>
+          <div class="ep-card-body">
+            <p class="ep-meta"><strong>Episode 4</strong><span>30 Sep 2026</span><span>41 min</span></p>
+            <h3 class="ep-title"><a href="/episodes/podcast/nancy-dagostino-finding-yourself-after-putting-everyone-else-first/">Nancy D’Agostino: Finding Yourself After Putting Everyone Else First</a></h3>
+            <p class="ep-summary">Following your own path, finding yourself again and refusing to reach the later years wondering what might have happened if you’d had a crack.</p>
+            <div class="listen-links">
+            <a href="https://open.spotify.com/episode/1fKnISnnsqfTDN7jZrK30o" target="_blank" rel="noopener noreferrer" aria-label="Listen to Episode 4 on Spotify">Spotify</a>
+            <a href="https://podcasts.apple.com/us/podcast/nancy-dagostino-finding-yourself-after-putting-everyone/id6815575028?i=1000792293200" target="_blank" rel="noopener noreferrer" aria-label="Listen to Episode 4 on Apple Podcasts">Apple Podcasts</a>
+            </div>
+          </div>
+        </li>
+        </ul>
+      </section>
+
+      <section class="band band-dark" aria-labelledby="guest-cta-title">
+        <div class="wrap band-grid">
+          <h2 id="guest-cta-title">Everybody has a story. Including you.</h2>
+          <div>
+            <p>
+              You don’t need to be famous, wealthy, successful or have climbed Mount Everest.
+              If you reckon you’ve got a story worth sharing, I’d love to hear from you.
+            </p>
+            <div class="btn-row">
+              <a class="btn btn-light" href="/guest/">Guest information</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
     <footer class="site-footer">
-      <p class="site-footer-left">© 2026 • 64 Brands</p>
-      <p class="site-footer-right">Privacy • Ts&amp;Cs</p>
+      <div class="wrap site-footer-inner">
+        <a class="wordmark" href="/" aria-label="*Conditions Apply, home"><svg class="wordmark-star" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><rect x="39" y="2" width="22" height="96" rx="1.5"/><rect x="39" y="2" width="22" height="96" rx="1.5" transform="rotate(60 50 50)"/><rect x="39" y="2" width="22" height="96" rx="1.5" transform="rotate(120 50 50)"/></svg><span>Conditions Apply</span></a>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="/episodes/">Episodes</a>
+          <a href="/guest/">Become a guest</a>
+          <a href="/what-the/">What the?</a>
+          <a href="/merch/">Merch</a>
+          <a href="/contact/">Contact</a>
+        </nav>
+        <div class="footer-legal">
+          <p>© 2026 • 64 Brands</p>
+          <p>*Conditions apply. Privacy • Ts&amp;Cs</p>
+        </div>
+      </div>
     </footer>
+    <script src="/site.js" defer></script>
   </body>
 </html>

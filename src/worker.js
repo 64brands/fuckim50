@@ -141,7 +141,7 @@ function buildEmail(body) {
   var safeEmail = escapeHtml(email);
 
   var text = [
-    "New Fi50 website enquiry",
+    "New *Conditions Apply website enquiry",
     "",
     "Enquiry Type: " + subject,
     "Name: " + name,
@@ -160,7 +160,7 @@ function buildEmail(body) {
     '<tr><td align="center" style="padding:32px 16px;">' +
     '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:740px;background:#ffffff;border-radius:16px;">' +
     '<tr><td style="padding:40px 40px 36px;font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;font-size:16px;line-height:1.5;color:#1a1a1a;">' +
-    '<h1 style="margin:0 0 28px;font-size:26px;line-height:1.25;font-weight:700;color:#1a1a1a;">New Fi50 website enquiry</h1>' +
+    '<h1 style="margin:0 0 28px;font-size:26px;line-height:1.25;font-weight:700;color:#1a1a1a;">New *Conditions Apply website enquiry</h1>' +
     '<p style="margin:0 0 16px;"><strong>Enquiry Type:</strong> ' +
     escapeHtml(subject) +
     "</p>" +
@@ -169,7 +169,7 @@ function buildEmail(body) {
     "</p>" +
     '<p style="margin:0 0 16px;"><strong>Email:</strong> <a href="mailto:' +
     encodeURIComponent(email).replace(/%40/g, "@") +
-    '" style="color:#017efe;text-decoration:underline;">' +
+    '" style="color:#d0140c;text-decoration:underline;">' +
     safeEmail +
     "</a></p>" +
     '<p style="margin:0 0 16px;"><strong>Phone:</strong> ' +
@@ -188,7 +188,7 @@ function buildEmail(body) {
     from: CONTACT_FROM,
     to: [CONTACT_TO],
     reply_to: email,
-    subject: "Fi50 Contact — " + subject + " — " + name,
+    subject: "*Conditions Apply Contact — " + subject + " — " + name,
     text: text,
     html: html,
   };

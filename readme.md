@@ -1,6 +1,15 @@
-# F*CK! I'M 50
+# *Conditions Apply
 
-Website for the F*CK! I'M 50 podcast.
+Website for the *Conditions Apply podcast with Paul Burfitt (formerly F*CK! I'M 50 / Fi50).
+
+## Site structure
+
+- `public/site.css` — all styles (palette and type tokens at the top).
+- `public/site.js` — mobile menu and the hero slider.
+- Hero slider: up to three artworks on the home and guest pages. Each slide is an `<li class="hero-slide">`
+  with wide art (2046 × 768) in `public/assets/hero/`, plus an optional square phone version
+  (add class `has-square` and a `<source media="(max-width: 699px)">`).
+- Episode covers are generated in CSS (`.ep-tile`); share images live in `public/assets/og/`.
 
 Canonical public site: https://fi50.show
 

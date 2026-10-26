@@ -1,178 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="robots" content="index, follow" />
-    <title>What The? | Fi50</title>
-    <meta
-      name="description"
-      content="Paul Burfitt on Fi50 — F*CK! I’M 50: where the last 20 years went, and conversations about family, work, health and starting again."
-    />
+    <title>What the? | *Conditions Apply</title>
+    <meta name="description" content="What *Conditions Apply is all about — Paul Burfitt on where the last 20 years went, and what comes next." />
     <link rel="canonical" href="https://fi50.show/what-the/" />
-    <meta property="og:site_name" content="Fi50" />
-    <meta property="og:title" content="What The? | Fi50" />
-    <meta
-      property="og:description"
-      content="Paul Burfitt on Fi50 — F*CK! I’M 50: where the last 20 years went, and conversations about family, work, health and starting again."
-    />
+    <meta property="og:site_name" content="*Conditions Apply" />
+    <meta property="og:title" content="What the? | *Conditions Apply" />
+    <meta property="og:description" content="What *Conditions Apply is all about — Paul Burfitt on where the last 20 years went, and what comes next." />
     <meta property="og:url" content="https://fi50.show/what-the/" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://fi50.show/assets/FI50-LOGO-MASTER.png" />
-    <link rel="stylesheet" href="/internal.css" />
-    <link rel="stylesheet" href="/footer.css" />
+    <meta property="og:image" content="https://fi50.show/assets/og/conditions-apply.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#f5f1e7" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="/assets/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/site.css" />
   </head>
   <body>
-    <header class="internal-header">
-      <a class="home-asterisk" href="/" aria-label="Home">
-        <img
-          class="home-mark home-mark--mobile"
-          src="/assets/ASTERISK_only-transparent.png"
-          alt=""
-          width="1734"
-          height="2184"
-        />
-        <img
-          class="home-mark home-mark--desktop"
-          src="/assets/FI50-LOGO-MASTER.png"
-          alt=""
-          width="1636"
-          height="955"
-        />
-      </a>
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-label="Menu"
-        aria-expanded="false"
-        aria-controls="site-menu"
-      >
-        <img
-          class="menu-mark menu-mark--mobile"
-          src="/assets/Hamburger-Menu.png"
-          alt=""
-          width="626"
-          height="535"
-        />
-        <img
-          class="menu-mark menu-mark--desktop"
-          src="/assets/Hamburger-Menu-Desktop.png"
-          alt=""
-          width="610"
-          height="586"
-        />
-      </button>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap site-header-inner">
+        <a class="wordmark" href="/" aria-label="*Conditions Apply, home"><svg class="wordmark-star" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><rect x="39" y="2" width="22" height="96" rx="1.5"/><rect x="39" y="2" width="22" height="96" rx="1.5" transform="rotate(60 50 50)"/><rect x="39" y="2" width="22" height="96" rx="1.5" transform="rotate(120 50 50)"/></svg><span>Conditions Apply</span></a>
+        <nav class="site-nav" aria-label="Main">
+          <a href="/episodes/">Episodes</a>
+          <a href="/guest/">Become a guest</a>
+          <a href="/what-the/" aria-current="page">What the?</a>
+          <a href="/merch/">Merch</a>
+          <a href="/contact/">Contact</a>
+          <a class="btn btn-red" href="/episodes/podcast/">Listen</a>
+        </nav>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+          <span class="menu-toggle-label">Menu</span><span class="menu-toggle-bars" aria-hidden="true"></span>
+        </button>
+      </div>
     </header>
     <nav id="site-menu" class="site-menu" hidden aria-label="Menu">
-      <a href="/episodes/">
-        <img src="/assets/episodes-button.svg" alt="Episodes" width="1032" height="337" />
-      </a>
-      <a href="/what-the/">
-        <img src="/assets/what-the-button.svg" alt="What The?" width="1015" height="347" />
-      </a>
-      <a href="/guest/">
-        <img
-          src="/assets/become-a-guest-button.svg"
-          alt="Become a Guest"
-          width="1030"
-          height="370"
-        />
-      </a>
-      <a href="/merch/">
-        <img src="/assets/merch-button.svg" alt="Merch" width="1037" height="375" />
-      </a>
-      <a href="/contact/">
-        <img src="/assets/contact-button.svg" alt="Contact" width="862" height="255" />
-      </a>
+      <a href="/">Home</a>
+      <a href="/episodes/">Episodes</a>
+      <a href="/guest/">Become a guest</a>
+      <a href="/what-the/" aria-current="page">What the?</a>
+      <a href="/merch/">Merch</a>
+      <a href="/contact/">Contact</a>
+      <p class="site-menu-fine">*Conditions apply.</p>
     </nav>
-    <h1 class="page-title">
-      <img src="/assets/What-The--Title.png" alt="What The?" />
-    </h1>
-    <div class="what-the-copy">
-      <p>
-        <strong>F*CK! I’M 50</strong> started with a pretty simple question:
-        <em>where the bloody hell did the last 20 years go?</em>
-      </p>
-      <img
-        class="what-the-break"
-        src="/assets/Bloody-20-Years.svg"
-        alt=""
-        width="1080"
-        height="328"
-      />
-      <p>
-        One minute you’re busy working, raising kids and dealing with life, the
-        next you wake up and realise — Fuck! I'm 50! Our kids hardly need us
-        anymore, yet our parents need us more than ever before.
-      </p>
-      <p>My name's Paul Burfitt. My mates call me Burf.</p>
-      <p>
-        I’m not a guru, not a life coach and certainly not an expert. I’m just a
-        bloke from Queensland who’s decided I’m not going to keep putting
-        everything off.
-      </p>
-      <img
-        class="what-the-break"
-        src="/assets/Kids-and-Parents.svg"
-        alt=""
-        width="1080"
-        height="432"
-      />
-      <p>
-        So I’m talking to people from around Australia and other places about
-        all the stuff that comes up at this stage of life — family, money,
-        health, work, relationships, ambitions, regrets, fuck-ups, starting
-        again and figuring out what makes you happy.
-      </p>
-      <p>
-        Some conversations will be with everyday people who have great stories.
-        Others will be with people you already know from sport, media, business
-        or somewhere completely unexpected. And every now and then I’ll bring in
-        someone who genuinely knows a thing or two on the subject they’re
-        talking.
-      </p>
-      <div class="what-the-platforms">
-        <img
-          src="/assets/apple-podcast-icon.svg"
-          alt=""
-          width="1080"
-          height="1080"
-        />
-        <img
-          src="/assets/spotify-icon.svg"
-          alt=""
-          width="1080"
-          height="1080"
-        />
-        <img
-          src="/assets/youtube-icon.svg"
-          alt=""
-          width="1080"
-          height="1080"
-        />
+    <main id="main">
+      <div class="wrap">
+        <header class="page-head">
+          <h1 class="page-title">What the?</h1>
+        </header>
+        <div class="section" style="padding-top: 40px">
+          <div class="prose">
+            <p>It all started with a pretty simple question.</p>
+            <p class="pull">Where the bloody hell did the last 20 years go?</p>
+            <p>
+              One minute you’re busy working, raising kids and dealing with life, the next you
+              wake up and realise — Fuck! I’m 50!
+            </p>
+            <p class="pull">Our kids hardly need us. Our parents need us more than ever before.</p>
+            <p>My name’s Paul Burfitt. My mates call me Burf.</p>
+            <p>
+              I’m not a guru, not a life coach and certainly not an expert. I’m just a bloke from
+              Queensland who’s decided I’m not going to keep putting everything off.
+            </p>
+            <p>
+              So I’m talking to people from around Australia and other places about all the stuff
+              that comes up at this stage of life — family, money, health, work, relationships,
+              ambitions, regrets, fuck-ups, starting again and figuring out what makes you happy.
+            </p>
+            <p>
+              Some conversations will be with everyday people who have great stories. Others will
+              be with people you already know from sport, media, business or somewhere completely
+              unexpected. And every now and then I’ll bring in someone who genuinely knows a thing
+              or two on the subject they’re talking.
+            </p>
+            <p>
+              I’ve got a podcast and a little YouTube channel set up. You’re invited to come along
+              for the ride as I start ticking off a few things I’ve spent too many years saying I’d
+              do “one day”.
+            </p>
+            <div class="btn-row" style="margin: 28px 0 32px">
+              <a class="btn btn-red" href="/episodes/podcast/">Listen to the episodes</a>
+              <a class="btn" href="https://podcasts.apple.com/us/podcast/id6815575028" target="_blank" rel="noopener noreferrer">Apple Podcasts</a>
+            </div>
+            <p>
+              You might have known the show as F*CK! I’M 50. The name’s changed, the conversations
+              haven’t — and like everything at this stage of life, conditions apply.
+            </p>
+            <p>
+              I’m sure some people will think it’s a brilliant idea. Plenty more probably won’t.
+              But either way here we go, and remember this is a hate free zone so play nice…
+            </p>
+            <p>
+              There’s sure to be some spills, thrills and the occasional disaster as I try to make
+              up for a bit of lost time.
+            </p>
+            <p>
+              <strong>Most of all remember, *Conditions Apply isn’t about having all the answers.
+              It’s about finally asking the questions — and doing something about them.</strong>
+            </p>
+          </div>
+        </div>
       </div>
-      <p>
-        I’ve got a podcast and a little YouTube channel set up. You’re invited
-        to come along for the ride as I start ticking off a few things I’ve
-        spent too many years saying I’d do “one day”.
-      </p>
-      <p>
-        I'm sure some people will think it's a brilliant idea. Plenty more
-        probably won’t. But either way here we go, and remember this is a hate
-        free zone so play nice…
-      </p>
-      <p>
-        There's sure to be some spills, thrills and the occasional disaster as I
-        try to make up for a bit of lost time.
-      </p>
-      <p>
-        <strong>Most of all remember, F*CK! I’M 50 isn’t about having all the answers. It’s about finally asking the questions — and doing something about them.</strong>
-      </p>
-    </div>
+    </main>
     <footer class="site-footer">
-      <p class="site-footer-left">© 2026 • 64 Brands</p>
-      <p class="site-footer-right">Privacy • Ts&amp;Cs</p>
+      <div class="wrap site-footer-inner">
+        <a class="wordmark" href="/" aria-label="*Conditions Apply, home"><svg class="wordmark-star" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><rect x="39" y="2" width="22" height="96" rx="1.5"/><rect x="39" y="2" width="22" height="96" rx="1.5" transform="rotate(60 50 50)"/><rect x="39" y="2" width="22" height="96" rx="1.5" transform="rotate(120 50 50)"/></svg><span>Conditions Apply</span></a>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="/episodes/">Episodes</a>
+          <a href="/guest/">Become a guest</a>
+          <a href="/what-the/">What the?</a>
+          <a href="/merch/">Merch</a>
+          <a href="/contact/">Contact</a>
+        </nav>
+        <div class="footer-legal">
+          <p>© 2026 • 64 Brands</p>
+          <p>*Conditions apply. Privacy • Ts&amp;Cs</p>
+        </div>
+      </div>
     </footer>
-    <script src="/internal-menu.js" defer></script>
+    <script src="/site.js" defer></script>
   </body>
 </html>
