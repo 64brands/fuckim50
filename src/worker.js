@@ -12,7 +12,7 @@ var ALLOWED_SUBJECTS = [
 ];
 
 var CONTACT_TO = "paul@fi50.show";
-var CONTACT_FROM = "Fi50 Website <paul@fi50.show>";
+var CONTACT_FROM = "Conditions Apply Show <noreply@send.64.com.au>";
 
 function isContactApi(pathname) {
   return pathname === "/api/contact" || pathname === "/api/contact/";
