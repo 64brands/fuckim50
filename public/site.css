@@ -1549,6 +1549,59 @@ a.format-card:hover {
 }
 
 /* -------------------------------------------------------------------------- */
+/* The fine print (privacy + terms)                                           */
+/* -------------------------------------------------------------------------- */
+
+[id] {
+  scroll-margin-top: calc(var(--header-h) + 24px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.legal-updated {
+  margin: 14px 0 0;
+  color: var(--grey);
+  font-size: 15px;
+}
+
+.legal-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.legal-section {
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 2px solid var(--ink);
+}
+
+.legal-section > h2 {
+  margin: 0 0 20px;
+  font-size: clamp(38px, 5vw, 52px);
+}
+
+.legal-section h3 {
+  margin-top: 1.5em;
+  font-size: 24px;
+}
+
+.legal-section .to-top {
+  margin-top: 28px;
+  font-size: 15px;
+}
+
+.legal-section .to-top a {
+  color: var(--grey);
+  font-weight: 600;
+}
+
+/* -------------------------------------------------------------------------- */
 /* Footer                                                                     */
 /* -------------------------------------------------------------------------- */
 
@@ -1604,6 +1657,18 @@ a.format-card:hover {
 
 .footer-legal p {
   margin: 0;
+}
+
+.footer-legal a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(245, 241, 231, 0.35);
+  text-underline-offset: 3px;
+}
+
+.footer-legal a:hover {
+  color: var(--paper);
+  text-decoration-color: var(--red-bright);
 }
 
 @media (min-width: 900px) {
