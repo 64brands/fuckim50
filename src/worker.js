@@ -12,7 +12,7 @@ var ALLOWED_SUBJECTS = [
   "General Enquiry",
 ];
 
-var CONTACT_TO = "paul@fi50.show";
+var CONTACT_TO = "paul@conditionsapply.show";
 var CONTACT_FROM = "*Conditions Apply Podcast <noreply@send.64.com.au>";
 
 function isContactApi(pathname) {
