@@ -1,6 +1,7 @@
 /**
- * Production Worker (fuckim50).
- * Static pages stay on the assets pipeline. /api/contact sends mail via Resend.
+ * Production Worker (fuckim50) for conditionsapply.show.
+ * Runs first on every request so the old domains can redirect to conditionsapply.show.
+ * Static pages are then served from the assets pipeline. /api/contact sends mail via Resend.
  */
 
 var ALLOWED_SUBJECTS = [
@@ -26,9 +27,31 @@ function isRetiredThingsPath(pathname) {
   );
 }
 
-function isPublicShowHost(hostname) {
-  var host = String(hostname || "").toLowerCase();
-  return host === "fi50.show" || host === "fuckim50.show" || host === "www.fi50.show" || host === "www.fuckim50.show";
+// conditionsapply.show is the main address. The old show domains (and any www.)
+// are still attached to this Worker and 301-redirect here, keeping the path.
+var CANONICAL_HOST = "conditionsapply.show";
+var REDIRECT_HOSTS = [
+  "www.conditionsapply.show",
+  "fi50.show",
+  "www.fi50.show",
+  "fuckim50.show",
+  "www.fuckim50.show",
+];
+
+function shouldRedirectHost(hostname) {
+  return REDIRECT_HOSTS.indexOf(String(hostname || "").toLowerCase()) !== -1;
+}
+
+function canonicalUrl(url, pathname) {
+  var target = new URL(url.toString());
+  target.protocol = "https:";
+  target.hostname = CANONICAL_HOST;
+  target.port = "";
+  if (pathname) {
+    target.pathname = pathname;
+    target.search = "";
+  }
+  return target.toString();
 }
 
 function json(body, status, extraHeaders) {
@@ -246,16 +269,17 @@ async function handleContact(request, env) {
 export default {
   async fetch(request, env) {
     var url = new URL(request.url);
+    // The contact API answers on every attached domain, so nothing posts into a redirect.
     if (isContactApi(url.pathname)) {
       return handleContact(request, env);
     }
+    var oldHost = shouldRedirectHost(url.hostname);
     if (isRetiredThingsPath(url.pathname)) {
-      var guest = new URL("/guest/", url.origin);
-      if (isPublicShowHost(url.hostname)) {
-        guest.protocol = "https:";
-        guest.hostname = "fi50.show";
-      }
-      return Response.redirect(guest.toString(), 301);
+      var guest = oldHost ? canonicalUrl(url, "/guest/") : new URL("/guest/", url.origin).toString();
+      return Response.redirect(guest, 301);
+    }
+    if (oldHost) {
+      return Response.redirect(canonicalUrl(url), 301);
     }
     return env.ASSETS.fetch(request);
   },

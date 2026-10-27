@@ -11,7 +11,10 @@ Website for the *Conditions Apply podcast with Paul Burfitt (formerly F*CK! I'M 
   (add class `has-square` and a `<source media="(max-width: 699px)">`).
 - Episode covers are generated in CSS (`.ep-tile`); share images live in `public/assets/og/`.
 
-Canonical public site: https://fi50.show
+Canonical public site: https://conditionsapply.show
+
+The old addresses (fi50.show, fuckim50.show) and www.conditionsapply.show stay attached to the same Worker
+and 301-redirect to https://conditionsapply.show, keeping the path. See `src/worker.js`.
 
 ## Production deploy
 
@@ -23,6 +26,6 @@ Deploy only from GitHub `main`, using the production Wrangler file:
 npx wrangler deploy --config wrangler.production.jsonc
 ```
 
-`wrangler.jsonc` matches that production Worker so a plain `wrangler deploy` cannot recreate the deleted `fuckim50-preview` Worker. Prefer the `--config wrangler.production.jsonc` command so custom domains `fi50.show` and `fuckim50.show` stay attached.
+`wrangler.jsonc` matches that production Worker so a plain `wrangler deploy` cannot recreate the deleted `fuckim50-preview` Worker. Prefer the `--config wrangler.production.jsonc` command so the custom domains (`conditionsapply.show`, `www.conditionsapply.show`, `fi50.show`, `fuckim50.show`) stay attached.
 
 Do not create preview Workers. Do not rename `fuckim50`.

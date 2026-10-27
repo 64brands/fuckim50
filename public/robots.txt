@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fi50.show/sitemap.xml
+Sitemap: https://conditionsapply.show/sitemap.xml

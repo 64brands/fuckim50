@@ -14,11 +14,13 @@
     { "pattern": "fi50.show", "zone_name": "fi50.show", "custom_domain": true },
     { "pattern": "fuckim50.show", "zone_name": "fuckim50.show", "custom_domain": true }
   ],
+  // run_worker_first: true so fi50.show / fuckim50.show / www. requests reach the Worker
+  // and 301-redirect to conditionsapply.show before any static file is served.
   "assets": {
     "directory": "./public",
     "binding": "ASSETS",
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page",
-    "run_worker_first": ["/api/*", "/things-im-doing", "/things-im-doing/*"]
+    "run_worker_first": true
   }
 }
