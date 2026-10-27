@@ -7,6 +7,8 @@
   "workers_dev": false,
   "preview_urls": false,
   "routes": [
+    { "pattern": "conditionsapply.show", "zone_name": "conditionsapply.show", "custom_domain": true },
+    { "pattern": "www.conditionsapply.show", "zone_name": "conditionsapply.show", "custom_domain": true },
     { "pattern": "fi50.show", "zone_name": "fi50.show", "custom_domain": true },
     { "pattern": "fuckim50.show", "zone_name": "fuckim50.show", "custom_domain": true }
   ],
