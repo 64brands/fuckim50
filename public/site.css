@@ -43,6 +43,7 @@
 
   --gutter: 20px;
   --wrap: 1240px;
+  --measure: 720px;
   --header-h: 64px;
 }
 
@@ -155,6 +156,27 @@ h3 {
   max-width: var(--wrap);
   margin-inline: auto;
   padding-inline: var(--gutter);
+}
+
+/* Centred reading column for text-led pages and episode bodies.
+   Text stays left-aligned; the column itself sits in the middle of the page. */
+.wrap--text {
+  max-width: calc(var(--measure) + 2 * var(--gutter));
+}
+
+/* Medium width for episode headers (cover tile + title), centred above the text column. */
+.wrap--mid {
+  max-width: calc(1040px + 2 * var(--gutter));
+}
+
+.wrap--text .prose,
+.wrap--text .page-lede,
+.wrap--text .form,
+.wrap--text .form-status,
+.wrap--text .contact-status,
+.wrap--text .contact-success,
+.wrap--text .episode-section {
+  max-width: none;
 }
 
 /* -------------------------------------------------------------------------- */
