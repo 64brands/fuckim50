@@ -1221,6 +1221,67 @@ a.format-card:hover {
   padding-bottom: 96px;
 }
 
+/* Book-a-recording call to action between guest-page sections. */
+.book-cta {
+  display: grid;
+  gap: 20px;
+  align-items: center;
+  padding: 32px 24px;
+  border-radius: 20px;
+  background: var(--paper-2);
+}
+
+/* The box already divides the sections, so drop the rule under it. */
+.book-cta + .split {
+  border-top: 0;
+}
+
+.book-cta-lead {
+  margin: 0;
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: var(--display-weight);
+  font-stretch: var(--display-stretch);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.book-cta-action {
+  display: grid;
+  justify-items: start;
+  gap: 10px;
+}
+
+.book-cta-action .btn {
+  min-height: 52px;
+  padding-inline: 28px;
+  font-size: 16px;
+}
+
+.book-cta-note {
+  margin: 0;
+  color: var(--grey);
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.prose + .book-cta-action {
+  margin: 28px 0 36px;
+}
+
+@media (max-width: 479px) {
+  .book-cta-action {
+    justify-items: stretch;
+  }
+}
+
+@media (min-width: 900px) {
+  .book-cta {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: 64px;
+    padding: 40px;
+  }
+}
+
 .facts {
   display: grid;
   gap: 0;
