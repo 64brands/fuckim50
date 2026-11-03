@@ -83,7 +83,7 @@
 /* Brief 16C: same desktop footer on the landing page.
    Stages stay viewport-fixed so the locked composition does not move.
    Footer stays in-flow (margin-top: auto) and stacks above the stage. */
-@media (min-width: 900px) and (min-height: 560px) {
+@media (min-width: 900px) and (min-height: 560px), (orientation: landscape) {
   body:has(> .stage--desktop) {
     display: flex;
     flex-direction: column;
@@ -124,4 +124,17 @@
 
 .site-footer a:hover {
   text-decoration: underline;
+}
+
+/* Phones turned sideways: a slim footer that doesn't sit over the Contact button. */
+@media (orientation: landscape) and (max-height: 559px) {
+  body:has(> .stage--desktop) .site-footer {
+    padding: 0 16px 8px;
+    font-size: 10px;
+    pointer-events: none;
+  }
+
+  body:has(> .stage--desktop) .site-footer a {
+    pointer-events: auto;
+  }
 }

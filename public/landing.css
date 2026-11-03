@@ -169,10 +169,10 @@ a:focus-visible {
 
 /* -------------------------------------------------------------------------- */
 /* Desktop artboard — 1154 × 769 locked composition                           */
-/* Shown from 900px wide, when there is enough height for the poster.         */
+/* Shown from 900px wide when there is room, and on any screen turned sideways. */
 /* -------------------------------------------------------------------------- */
 
-@media (min-width: 900px) and (min-height: 560px) {
+@media (min-width: 900px) and (min-height: 560px), (orientation: landscape) {
   .stage--mobile {
     display: none;
   }
@@ -280,4 +280,22 @@ a:focus-visible {
   transform: rotate(-4deg) scale(0.9);
   transform-origin: center center;
   z-index: 6;
+}
+
+/* Phones turned sideways: same composition, scaled to the screen height.
+   The pixel nudges above suit a full-size poster, so they scale with it here. */
+@media (orientation: landscape) and (max-height: 559px) {
+  .artboard--desktop .headline {
+    top: calc(43.6% + 1.7cqh);
+  }
+
+  .artboard--desktop .btn-episodes,
+  .artboard--desktop .btn-what-the {
+    transform: translateY(2.2cqh) rotate(-6deg) scale(0.9);
+  }
+
+  .artboard--desktop .btn-things,
+  .artboard--desktop .btn-merch {
+    transform: translateY(3.9cqh) rotate(-6deg) scale(0.9);
+  }
 }
