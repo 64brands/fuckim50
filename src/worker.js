@@ -35,17 +35,10 @@ var REDIRECT_HOSTS = [
   "www.fi50.show",
   "fuckim50.show",
   "www.fuckim50.show",
-  "conditionsapply.show",
-  "www.conditionsapply.show",
 ];
 
 function shouldRedirectHost(hostname) {
   return REDIRECT_HOSTS.indexOf(String(hostname || "").toLowerCase()) !== -1;
-}
-
-function isConditionsApplyHost(hostname) {
-  var host = String(hostname || "").toLowerCase();
-  return host === "conditionsapply.show" || host === "www.conditionsapply.show";
 }
 
 function canonicalUrl(url, pathname) {
@@ -56,12 +49,6 @@ function canonicalUrl(url, pathname) {
   if (pathname) {
     target.pathname = pathname;
     target.search = "";
-  }
-  // From 27 Oct to 3 Nov 2026, fi50.show and fuckim50.show 301-redirected to conditionsapply.show,
-  // and browsers can remember a 301 for good. A plain redirect back to fi50.show would loop in
-  // those browsers, so this adds a query string they have no remembered redirect for.
-  if (isConditionsApplyHost(url.hostname)) {
-    target.searchParams.set("via", "ca");
   }
   return target.toString();
 }
