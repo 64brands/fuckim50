@@ -205,6 +205,14 @@ img {
   }
 }
 
+/* iPad landscape and small windows only: on episode pages the back link sits
+   under the logo here, so it starts just below it. Wider desktops are unchanged. */
+@media (min-width: 900px) and (max-width: 1199px) {
+  body:has(.episode-detail) .podcast-back {
+    margin-top: 50px;
+  }
+}
+
 /* Short screens: the panel scrolls inside itself rather than running off the screen. */
 @media (max-height: 659px) {
   .site-menu {

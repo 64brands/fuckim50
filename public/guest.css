@@ -666,3 +666,10 @@ section.guest-panel > .guest-book-action {
     font-size: 17px;
   }
 }
+
+/* Narrowest desktop widths only: keeps the privacy intro clear of the menu. */
+@media (min-width: 900px) and (max-width: 959px) {
+  .legal-lede {
+    max-width: calc(100vw - 390px);
+  }
+}
