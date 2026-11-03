@@ -43,6 +43,11 @@ function shouldRedirectHost(hostname) {
   return REDIRECT_HOSTS.indexOf(String(hostname || "").toLowerCase()) !== -1;
 }
 
+function isConditionsApplyHost(hostname) {
+  var host = String(hostname || "").toLowerCase();
+  return host === "conditionsapply.show" || host === "www.conditionsapply.show";
+}
+
 function canonicalUrl(url, pathname) {
   var target = new URL(url.toString());
   target.protocol = "https:";
@@ -52,7 +57,21 @@ function canonicalUrl(url, pathname) {
     target.pathname = pathname;
     target.search = "";
   }
+  // From 27 Oct to 3 Nov 2026, fi50.show and fuckim50.show 301-redirected to conditionsapply.show,
+  // and browsers can remember a 301 for good. A plain redirect back to fi50.show would loop in
+  // those browsers, so this adds a query string they have no remembered redirect for.
+  if (isConditionsApplyHost(url.hostname)) {
+    target.searchParams.set("via", "ca");
+  }
   return target.toString();
+}
+
+// Browsers keep this redirect for an hour only, so a future address change can't get stuck.
+function redirect(location) {
+  return new Response(null, {
+    status: 301,
+    headers: { Location: location, "Cache-Control": "public, max-age=3600" },
+  });
 }
 
 function json(body, status, extraHeaders) {
@@ -277,10 +296,10 @@ export default {
     var oldHost = shouldRedirectHost(url.hostname);
     if (isRetiredThingsPath(url.pathname)) {
       var guest = oldHost ? canonicalUrl(url, "/guest/") : new URL("/guest/", url.origin).toString();
-      return Response.redirect(guest, 301);
+      return redirect(guest);
     }
     if (oldHost) {
-      return Response.redirect(canonicalUrl(url), 301);
+      return redirect(canonicalUrl(url));
     }
     return env.ASSETS.fetch(request);
   },
