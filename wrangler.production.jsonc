@@ -7,13 +7,13 @@
   "workers_dev": false,
   "preview_urls": false,
   "routes": [
-    { "pattern": "conditionsapply.show", "zone_name": "conditionsapply.show", "custom_domain": true },
-    { "pattern": "www.conditionsapply.show", "zone_name": "conditionsapply.show", "custom_domain": true },
     { "pattern": "fi50.show", "zone_name": "fi50.show", "custom_domain": true },
-    { "pattern": "fuckim50.show", "zone_name": "fuckim50.show", "custom_domain": true }
+    { "pattern": "fuckim50.show", "zone_name": "fuckim50.show", "custom_domain": true },
+    { "pattern": "conditionsapply.show", "zone_name": "conditionsapply.show", "custom_domain": true },
+    { "pattern": "www.conditionsapply.show", "zone_name": "conditionsapply.show", "custom_domain": true }
   ],
-  // run_worker_first: true so fi50.show / fuckim50.show / www. requests reach the Worker
-  // and 301-redirect to conditionsapply.show before any static file is served.
+  // run_worker_first: true so fuckim50.show / conditionsapply.show / www. requests reach the
+  // Worker and 301-redirect to fi50.show before any static file is served.
   "assets": {
     "directory": "./public",
     "binding": "ASSETS",

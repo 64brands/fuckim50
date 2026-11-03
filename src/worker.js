@@ -1,6 +1,6 @@
 /**
- * Production Worker (fuckim50) for conditionsapply.show.
- * Runs first on every request so the old domains can redirect to conditionsapply.show.
+ * Production Worker (fuckim50) for fi50.show.
+ * Runs first on every request so the other domains can redirect to fi50.show.
  * Static pages are then served from the assets pipeline. /api/contact sends mail via Resend.
  */
 
@@ -12,8 +12,9 @@ var ALLOWED_SUBJECTS = [
   "General Enquiry",
 ];
 
-var CONTACT_TO = "paul@conditionsapply.show";
-var CONTACT_FROM = "*Conditions Apply Podcast <noreply@send.64.com.au>";
+var CONTACT_TO = "paul@fi50.show";
+// Sender name and subject lines say Fi50 so they get past email profanity filters.
+var CONTACT_FROM = "Fi50 Podcast <noreply@send.64.com.au>";
 
 function isContactApi(pathname) {
   return pathname === "/api/contact" || pathname === "/api/contact/";
@@ -27,15 +28,15 @@ function isRetiredThingsPath(pathname) {
   );
 }
 
-// conditionsapply.show is the main address. The old show domains (and any www.)
+// fi50.show is the main address. The other show domains (and any www.)
 // are still attached to this Worker and 301-redirect here, keeping the path.
-var CANONICAL_HOST = "conditionsapply.show";
+var CANONICAL_HOST = "fi50.show";
 var REDIRECT_HOSTS = [
-  "www.conditionsapply.show",
-  "fi50.show",
   "www.fi50.show",
   "fuckim50.show",
   "www.fuckim50.show",
+  "conditionsapply.show",
+  "www.conditionsapply.show",
 ];
 
 function shouldRedirectHost(hostname) {
@@ -164,7 +165,7 @@ function buildEmail(body) {
   var safeEmail = escapeHtml(email);
 
   var text = [
-    "New *Conditions Apply website enquiry",
+    "New Fi50 website enquiry",
     "",
     "Enquiry Type: " + subject,
     "Name: " + name,
@@ -183,7 +184,7 @@ function buildEmail(body) {
     '<tr><td align="center" style="padding:32px 16px;">' +
     '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:740px;background:#ffffff;border-radius:16px;">' +
     '<tr><td style="padding:40px 40px 36px;font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;font-size:16px;line-height:1.5;color:#1a1a1a;">' +
-    '<h1 style="margin:0 0 28px;font-size:26px;line-height:1.25;font-weight:700;color:#1a1a1a;">New *Conditions Apply website enquiry</h1>' +
+    '<h1 style="margin:0 0 28px;font-size:26px;line-height:1.25;font-weight:700;color:#1a1a1a;">New Fi50 website enquiry</h1>' +
     '<p style="margin:0 0 16px;"><strong>Enquiry Type:</strong> ' +
     escapeHtml(subject) +
     "</p>" +
@@ -192,7 +193,7 @@ function buildEmail(body) {
     "</p>" +
     '<p style="margin:0 0 16px;"><strong>Email:</strong> <a href="mailto:' +
     encodeURIComponent(email).replace(/%40/g, "@") +
-    '" style="color:#d0140c;text-decoration:underline;">' +
+    '" style="color:#017efe;text-decoration:underline;">' +
     safeEmail +
     "</a></p>" +
     '<p style="margin:0 0 16px;"><strong>Phone:</strong> ' +
@@ -211,7 +212,7 @@ function buildEmail(body) {
     from: CONTACT_FROM,
     to: [CONTACT_TO],
     reply_to: email,
-    subject: "*Conditions Apply Contact — " + subject + " — " + name,
+    subject: "Fi50 Contact — " + subject + " — " + name,
     text: text,
     html: html,
   };
