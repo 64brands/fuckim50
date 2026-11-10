@@ -1,4 +1,4 @@
-/* F*CK! I'M 50 — Brief 01 Landing page
+/* The I’M 50! Show — Brief 01 Landing page
    Two locked compositions (mobile poster / desktop poster).
    Positions are percentages of each approved artboard. */
 
@@ -182,7 +182,7 @@ a:focus-visible {
     place-items: center;
   }
 
-  /* Master stage = visible Fi50 group (Paul left → Contact right).
+  /* Master stage = visible homepage group (Paul left → Contact right).
      Centred in the viewport so left/right gutters stay equal. */
   .desktop-master {
     --poster-w: min(100vw, calc(100dvh * 1154 / 769));
@@ -300,7 +300,7 @@ a:focus-visible {
   }
 }
 
-/* Homepage: The I'M 50! Show logo is taller than the old Fi50 logo, so it is sized
+/* Homepage: The I'M 50! Show logo is taller than the old logo, so it is sized
    to the old logo's height and centred on the same spot, keeping it clear of the tagline. */
 .artboard--desktop .logo-large {
   left: 52.2%;

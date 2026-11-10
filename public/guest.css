@@ -1,4 +1,4 @@
-/* FI50 guest information page. Scoped so other internals are unchanged. */
+/* Guest information page. Scoped so other internals are unchanged. */
 
 html:has(.guest-page),
 body:has(.guest-page) {
