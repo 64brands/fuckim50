@@ -1,6 +1,6 @@
 /**
- * Production Worker (fuckim50) for fi50.show.
- * Runs first on every request so the other domains can redirect to fi50.show.
+ * Production Worker (fuckim50) for im50show.com.
+ * Runs first on every request so the other domains can redirect to im50show.com.
  * Static pages are then served from the assets pipeline. /api/contact sends mail via Resend.
  */
 
@@ -28,10 +28,14 @@ function isRetiredThingsPath(pathname) {
   );
 }
 
-// fi50.show is the main address. The other show domains (and any www.)
+// im50show.com is the main address. The old show domains (and any www.)
 // are still attached to this Worker and 301-redirect here, keeping the path.
-var CANONICAL_HOST = "fi50.show";
+var CANONICAL_HOST = "im50show.com";
 var REDIRECT_HOSTS = [
+  "www.im50show.com",
+  "theim50show.com",
+  "www.theim50show.com",
+  "fi50.show",
   "www.fi50.show",
   "fuckim50.show",
   "www.fuckim50.show",

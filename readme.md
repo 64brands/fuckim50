@@ -1,14 +1,12 @@
-# F*CK! I'M 50
+# The I'M 50! Show
 
-Website for the F*CK! I'M 50 podcast with Paul Burfitt.
+Website for The I'M 50! Show with Paul Burfitt (formerly F*CK! I'M 50 / Fi50).
 
-Canonical public site: https://fi50.show
+Canonical public site: https://im50show.com
 
-fi50.show is the main address for everything, because it gets past email profanity filters. The site itself
-uses the full show name. Anything that travels through email (sender name, subject lines, addresses) uses Fi50.
-
-fuckim50.show stays attached to the same Worker and 301-redirects to https://fi50.show, keeping the path.
-See `src/worker.js`.
+im50show.com is the main address for The I'M 50! Show. These domains stay attached to the same
+Worker and 301-redirect to https://im50show.com, keeping the path: www.im50show.com,
+theim50show.com, fi50.show and fuckim50.show (and their www. versions). See `src/worker.js`.
 
 ## Production deploy
 
@@ -20,6 +18,6 @@ Deploy only from GitHub `main`, using the production Wrangler file:
 npx wrangler deploy --config wrangler.production.jsonc
 ```
 
-`wrangler.jsonc` matches that production Worker so a plain `wrangler deploy` cannot recreate the deleted `fuckim50-preview` Worker. Prefer the `--config wrangler.production.jsonc` command so the custom domains (`fi50.show`, `fuckim50.show`) stay attached.
+`wrangler.jsonc` matches that production Worker so a plain `wrangler deploy` cannot recreate the deleted `fuckim50-preview` Worker. Prefer the `--config wrangler.production.jsonc` command so the custom domains (`im50show.com`, `www.im50show.com`, `theim50show.com`, `fi50.show`, `fuckim50.show`) stay attached.
 
 Do not create preview Workers. Do not rename `fuckim50`.
