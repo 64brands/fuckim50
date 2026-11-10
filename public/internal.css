@@ -1627,12 +1627,13 @@ img {
 }
 
 /* Menu panel: solid yellow to match the I'M 50! logo (no dark shade), white keyline kept.
-   On phones the five buttons are also spread evenly down the panel. */
+   The five buttons are spread evenly down the panel. */
 .site-menu {
   background: #f5cc00;
 }
 
-@media (max-width: 899px) and (min-height: 560px) {
+/* Even button spacing in the menu panel, on phones and desktop. */
+@media (min-height: 560px) {
   .site-menu {
     justify-content: space-evenly;
     gap: 0;
@@ -1641,5 +1642,24 @@ img {
 
   .site-menu a[href="/contact/"] {
     margin-top: 0;
+  }
+}
+
+/* Phones: "the menu" label sits left of the burger, centred on it, and opens the menu too.
+   Hidden on desktop, which has its own "here's the menu" artwork. */
+.menu-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.menu-toggle .menu-label {
+  height: 22px;
+  width: auto;
+}
+
+@media (min-width: 900px) {
+  .menu-toggle .menu-label {
+    display: none;
   }
 }
