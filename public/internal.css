@@ -2,7 +2,7 @@
    Landing page CSS is not used here. */
 
 :root {
-  --fi50-blue: #017efe;
+  --site-bg: #ff3d00;
 }
 
 *,
@@ -15,7 +15,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: var(--fi50-blue);
+  background: var(--site-bg);
   min-height: 100%;
   min-height: 100dvh;
 }
@@ -1624,4 +1624,13 @@ img {
   .episode-transcript p {
     margin-top: 16px;
   }
+}
+
+/* The I'M 50! Show logo is a square SVG with empty margin around the artwork.
+   Show it in a 3:2 box so it sits in the same footprint the old landscape logo used.
+   The SVG file itself is left untouched. */
+img[src$="Im50-show-logo.svg"] {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  height: auto;
 }

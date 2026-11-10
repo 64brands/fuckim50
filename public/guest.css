@@ -32,7 +32,7 @@ body:has(.guest-page) .site-footer {
   background:
     radial-gradient(ellipse 80% 55% at 82% 12%, rgba(254, 246, 3, 0.16), transparent 58%),
     radial-gradient(ellipse 70% 60% at 8% 78%, rgba(0, 24, 72, 0.38), transparent 62%),
-    radial-gradient(ellipse 50% 40% at 50% 40%, rgba(1, 126, 254, 0.2), transparent 70%);
+    radial-gradient(ellipse 50% 40% at 50% 40%, rgba(255, 61, 0, 0.2), transparent 70%);
 }
 
 .guest-backdrop-asterisk {
@@ -122,7 +122,7 @@ body:has(.guest-page) .site-footer {
     linear-gradient(
       180deg,
       rgba(255, 255, 255, 0.3),
-      rgba(1, 126, 254, 0.16) 20%,
+      rgba(255, 61, 0, 0.16) 20%,
       rgba(0, 24, 72, 0.3) 100%
     ),
     rgba(0, 36, 104, 0.3);
@@ -672,4 +672,13 @@ section.guest-panel > .guest-book-action {
   .legal-lede {
     max-width: calc(100vw - 390px);
   }
+}
+
+/* The I'M 50! Show logo is a square SVG with empty margin around the artwork.
+   Show it in a 3:2 box so it sits in the same footprint the old landscape logo used.
+   The SVG file itself is left untouched. */
+img[src$="Im50-show-logo.svg"] {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  height: auto;
 }

@@ -3,7 +3,7 @@
    Positions are percentages of each approved artboard. */
 
 :root {
-  --fi50-blue: #017efe;
+  --site-bg: #ff3d00;
 }
 
 *,
@@ -16,7 +16,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: var(--fi50-blue);
+  background: var(--site-bg);
   min-height: 100%;
   min-height: 100dvh;
   overflow: hidden;
@@ -39,12 +39,12 @@ a:focus-visible {
   inset: 0;
   display: grid;
   place-items: center;
-  background: var(--fi50-blue);
+  background: var(--site-bg);
 }
 
 .artboard {
   position: relative;
-  background: var(--fi50-blue);
+  background: var(--site-bg);
   overflow: hidden;
   container-type: size;
 }
@@ -298,4 +298,25 @@ a:focus-visible {
   .artboard--desktop .btn-merch {
     transform: translateY(3.9cqh) rotate(-6deg) scale(0.9);
   }
+}
+
+/* The I'M 50! Show logo is a square SVG with empty margin around the artwork.
+   Show it in a 3:2 box so it sits in the same footprint the old landscape logo used.
+   The SVG file itself is left untouched. */
+img[src$="Im50-show-logo.svg"] {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  height: auto;
+}
+
+/* Homepage: the new logo is taller than the old one, so it runs slightly smaller,
+   centred on the same spot, to keep clear of the tagline. */
+.artboard--desktop .logo-large[src$="Im50-show-logo.svg"] {
+  left: 51.3%;
+  width: 38%;
+}
+
+.artboard--mobile .logo[src$="Im50-show-logo.svg"] {
+  left: 12%;
+  width: 76%;
 }
