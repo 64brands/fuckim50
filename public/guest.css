@@ -31,7 +31,6 @@ body:has(.guest-page) .site-footer {
   pointer-events: none;
   background:
     radial-gradient(ellipse 80% 55% at 82% 12%, rgba(254, 246, 3, 0.16), transparent 58%),
-    radial-gradient(ellipse 70% 60% at 8% 78%, rgba(0, 24, 72, 0.38), transparent 62%),
     radial-gradient(ellipse 50% 40% at 50% 40%, rgba(255, 61, 0, 0.2), transparent 70%);
 }
 
