@@ -315,10 +315,10 @@ a:focus-visible {
 /* Mobile homepage button spacing — tuned by eye with Paul.
    Each number moves that button down (positive) or up (negative) from its original spot. */
 .artboard--mobile .poster-nav {
-  --drop-episodes: 8px;
-  --drop-what-the: 18px;
-  --drop-guest: 30px;
-  --drop-merch: 42px;
+  --drop-episodes: 18px;
+  --drop-what-the: 28px;
+  --drop-guest: 40px;
+  --drop-merch: 52px;
 }
 .artboard--mobile .poster-nav .btn-episodes { translate: 0 var(--drop-episodes); }
 .artboard--mobile .poster-nav .btn-what-the { translate: 0 var(--drop-what-the); }
