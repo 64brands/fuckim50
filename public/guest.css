@@ -672,3 +672,25 @@ section.guest-panel > .guest-book-action {
     max-width: calc(100vw - 390px);
   }
 }
+
+/* Become a Guest page only: solid orange background like the rest of the site,
+   and flat boxes (no shading or blur) with just a white keyline.
+   The Privacy page shares this stylesheet and is unchanged. */
+.page-guest .guest-backdrop {
+  display: none;
+}
+
+.page-guest .guest-panel,
+.page-guest .guest-form input,
+.page-guest .guest-form textarea {
+  background: transparent;
+  border: 1px solid #ffffff;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.page-guest .guest-form input:-webkit-autofill,
+.page-guest .guest-form textarea:-webkit-autofill {
+  box-shadow: 0 0 0 1000px #ff3d00 inset;
+}
