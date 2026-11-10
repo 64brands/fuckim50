@@ -1625,12 +1625,3 @@ img {
     margin-top: 16px;
   }
 }
-
-/* The I'M 50! Show logo is a square SVG with empty margin around the artwork.
-   Show it in a 3:2 box so it sits in the same footprint the old landscape logo used.
-   The SVG file itself is left untouched. */
-img[src$="Im50-show-logo.svg"] {
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
-  height: auto;
-}

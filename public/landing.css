@@ -300,23 +300,14 @@ a:focus-visible {
   }
 }
 
-/* The I'M 50! Show logo is a square SVG with empty margin around the artwork.
-   Show it in a 3:2 box so it sits in the same footprint the old landscape logo used.
-   The SVG file itself is left untouched. */
-img[src$="Im50-show-logo.svg"] {
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
-  height: auto;
+/* Homepage: The I'M 50! Show logo is taller than the old Fi50 logo, so it is sized
+   to the old logo's height and centred on the same spot, keeping it clear of the tagline. */
+.artboard--desktop .logo-large {
+  left: 52.2%;
+  width: 36.2%;
 }
 
-/* Homepage: the new logo is taller than the old one, so it runs slightly smaller,
-   centred on the same spot, to keep clear of the tagline. */
-.artboard--desktop .logo-large[src$="Im50-show-logo.svg"] {
-  left: 51.3%;
-  width: 38%;
-}
-
-.artboard--mobile .logo[src$="Im50-show-logo.svg"] {
-  left: 12%;
-  width: 76%;
+.artboard--mobile .logo {
+  left: 17.65%;
+  width: 64.7%;
 }
