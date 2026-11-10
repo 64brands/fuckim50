@@ -1625,3 +1625,23 @@ img {
     margin-top: 16px;
   }
 }
+
+/* Mobile menu: solid orange panel (no dark shade) with the white keyline,
+   and the five buttons spread evenly down the panel. Desktop menu unchanged. */
+@media (max-width: 899px) {
+  .site-menu {
+    background: var(--site-bg);
+  }
+}
+
+@media (max-width: 899px) and (min-height: 560px) {
+  .site-menu {
+    justify-content: space-evenly;
+    gap: 0;
+    padding: 12px 0;
+  }
+
+  .site-menu a[href="/contact/"] {
+    margin-top: 0;
+  }
+}
