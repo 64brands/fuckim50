@@ -1626,12 +1626,10 @@ img {
   }
 }
 
-/* Mobile menu: solid orange panel (no dark shade) with the white keyline,
-   and the five buttons spread evenly down the panel. Desktop menu unchanged. */
-@media (max-width: 899px) {
-  .site-menu {
-    background: var(--site-bg);
-  }
+/* Menu panel: solid yellow to match the I'M 50! logo (no dark shade), white keyline kept.
+   On phones the five buttons are also spread evenly down the panel. */
+.site-menu {
+  background: #f5cc00;
 }
 
 @media (max-width: 899px) and (min-height: 560px) {
