@@ -11,10 +11,7 @@
     { "pattern": "www.im50show.com", "zone_name": "im50show.com", "custom_domain": true },
     { "pattern": "theim50show.com", "zone_name": "theim50show.com", "custom_domain": true },
     { "pattern": "fi50.show", "zone_name": "fi50.show", "custom_domain": true },
-    { "pattern": "fuckim50.show", "zone_name": "fuckim50.show", "custom_domain": true },
-    { "pattern": "www.theim50show.com", "zone_name": "theim50show.com", "custom_domain": true },
-    { "pattern": "www.fi50.show", "zone_name": "fi50.show", "custom_domain": true },
-    { "pattern": "www.fuckim50.show", "zone_name": "fuckim50.show", "custom_domain": true }
+    { "pattern": "fuckim50.show", "zone_name": "fuckim50.show", "custom_domain": true }
   ],
   // run_worker_first: true so the old domains reach the Worker and 301-redirect
   // to im50show.com before any static file is served.
