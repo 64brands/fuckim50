@@ -19,7 +19,8 @@ body {
   background: var(--site-bg);
   min-height: 100%;
   min-height: 100dvh;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 img {
@@ -51,7 +52,7 @@ a:focus-visible {
 
 .artboard img,
 .artboard a.btn,
-.artboard h1 {
+.artboard .headline {
   position: absolute;
   margin: 0;
 }
@@ -65,7 +66,7 @@ a:focus-visible {
 .artboard .logo,
 .artboard .logo-large,
 .artboard .paul,
-.artboard h1 img {
+.artboard .headline img {
   height: auto;
 }
 

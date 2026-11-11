@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,6 +10,7 @@
       content="The I’M 50! Show is Paul Burfitt’s podcast. It starts with a simple question: where the bloody hell did the last 20 years go?"
     />
     <link rel="canonical" href="https://im50show.com/" />
+    <link rel="alternate" type="application/rss+xml" title="The I’M 50! Show" href="https://feeds.acast.com/public/shows/6ae9b0f6dc2860cef494e678" />
     <meta property="og:site_name" content="The I’M 50! Show" />
     <meta property="og:title" content="The I’M 50! Show with Paul Burfitt | Life at 50" />
     <meta
@@ -36,7 +37,10 @@
       "@type": "WebSite",
       "@id": "https://im50show.com/#website",
       "name": "The I’M 50! Show",
-      "alternateName": "I’M 50!",
+      "alternateName": [
+        "I’M 50!",
+        "IM50 Show"
+      ],
       "url": "https://im50show.com/",
       "publisher": {
         "@id": "https://im50show.com/#64-brands"
@@ -47,23 +51,44 @@
       "@id": "https://im50show.com/#64-brands",
       "name": "64 Brands",
       "legalName": "P1 Shootout Pty Ltd",
-      "url": "https://64.com.au/"
+      "url": "https://64.com.au/",
+      "address": {
+        "@type": "PostalAddress",
+        "postOfficeBoxNumber": "PO Box 802",
+        "addressLocality": "Cannonvale",
+        "addressRegion": "QLD",
+        "postalCode": "4802",
+        "addressCountry": "AU"
+      }
     },
     {
       "@type": "Person",
       "@id": "https://im50show.com/#paul-burfitt",
       "name": "Paul Burfitt",
-      "url": "https://im50show.com/"
+      "alternateName": "Burf",
+      "jobTitle": "Host",
+      "description": "Paul Burfitt is the founder and host of The I’M 50! Show, an Australian podcast about life at 50. He is based in Queensland.",
+      "url": "https://im50show.com/what-the/",
+      "image": "https://im50show.com/assets/Paul-Burfitt-Sept26-001.jpg",
+      "worksFor": {
+        "@id": "https://im50show.com/#64-brands"
+      }
     },
     {
       "@type": "PodcastSeries",
       "@id": "https://im50show.com/episodes/podcast/#podcast",
       "name": "The I’M 50! Show",
-      "alternateName": "I’M 50!",
+      "alternateName": [
+        "I’M 50!",
+        "I'm 50 Show",
+        "IM50 Show",
+        "Fi50",
+        "F*CK! I’M 50"
+      ],
       "url": "https://im50show.com/episodes/podcast/",
       "webFeed": "https://feeds.acast.com/public/shows/6ae9b0f6dc2860cef494e678",
       "inLanguage": "en-AU",
-      "description": "The I’M 50! Show started with a pretty simple question: where the bloody hell did the last 20 years go? One minute you’re busy working, raising kids and dealing with life, the next you wake up and realise — I’M 50! Our kids hardly need us anymore, yet our parents need us more than ever before.",
+      "description": "The I’M 50! Show is an Australian podcast hosted by Paul Burfitt about life at 50: family, money, health, work, relationships, ageing parents and starting again. It started with a simple question: where the bloody hell did the last 20 years go?",
       "image": "https://assets.pippa.io/shows/6ae9b0f6dc2860cef494e678/show-cover.jpeg",
       "author": {
         "@id": "https://im50show.com/#paul-burfitt"
@@ -83,6 +108,7 @@
     </script>
     <link rel="stylesheet" href="/landing.css" />
     <link rel="stylesheet" href="/footer.css" />
+    <link rel="stylesheet" href="/home.css" />
     <link rel="icon" href="/favicon.ico?v=2" sizes="48x48" />
     <link rel="icon" href="/favicon-192.png?v=2" type="image/png" sizes="192x192" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" />
@@ -105,14 +131,14 @@
           width="512"
           height="1010"
         />
-        <h1 class="headline">
+        <div class="headline">
           <img
             src="/assets/mobile-20years-gone.svg"
             alt="Where's the last 20 years gone?"
             width="822"
             height="638"
           />
-        </h1>
+        </div>
         <nav class="poster-nav" aria-label="Landing">
           <a class="btn btn-episodes" href="/episodes/">
             <img src="/assets/episodes-button.svg" alt="Episodes" width="1032" height="337" />
@@ -151,14 +177,14 @@
           width="1636"
           height="955"
         />
-        <h1 class="headline">
+        <div class="headline">
           <img
             src="/assets/desktop-20years-gone.svg"
             alt="Where's the last 20 years gone?"
             width="1351"
             height="500"
           />
-        </h1>
+        </div>
         <nav class="poster-nav" aria-label="Landing">
           <a class="btn btn-episodes" href="/episodes/">
             <img src="/assets/episodes-button.svg" alt="Episodes" width="1032" height="337" />
@@ -179,6 +205,81 @@
       </div>
       </div>
     </div>
+
+    <main class="home-more" id="the-show">
+      <section class="home-intro" aria-labelledby="home-title">
+        <p class="home-kicker">The podcast</p>
+        <h1 id="home-title" class="home-title">The I’M 50! Show with Paul Burfitt</h1>
+        <p class="home-lede">
+          One minute you’re busy working, raising kids and dealing with life. The next you wake up
+          and realise — I’M 50! The kids hardly need you anymore, and your parents need you more
+          than ever.
+        </p>
+        <p>
+          The I’M 50! Show is an Australian podcast about this stage of life. Each episode tackles
+          a different topic — family, money, health, work, relationships, ageing parents, regrets
+          and starting again — through solo episodes and honest conversations with everyday people
+          and a few faces you might know.
+        </p>
+        <p>
+          I’m Paul Burfitt, a bloke from Queensland. Not a guru, not a life coach, just someone
+          who’s decided to stop putting things off. <a href="/what-the/">More about the show</a>
+        </p>
+      </section>
+
+      <section class="home-episodes" aria-labelledby="home-episodes-title">
+        <p class="home-kicker">Listen now</p>
+        <h2 id="home-episodes-title">Latest episodes</h2>
+        <ul class="home-episode-list">
+          <li>
+            <a class="home-episode" href="/episodes/podcast/sebastian-foti-starting-over-after-divorce/">
+              <img src="/assets/Sebastian-Foti-OCT26-006.jpg" alt="Sebastian Foti" width="805" height="888" loading="lazy" />
+              <span class="home-episode-number">Episode 6</span>
+              <span class="home-episode-title">Starting Over After Divorce: Sebastian Foti on Fatherhood, Career Change &amp; Midlife</span>
+            </a>
+          </li>
+          <li>
+            <a class="home-episode" href="/episodes/podcast/luke-moulton-creating-a-life-you-dont-want-to-escape/">
+              <img src="/assets/Luke-Moulton-Oct26-005.jpg" alt="Luke Moulton" width="805" height="888" loading="lazy" />
+              <span class="home-episode-number">Episode 5</span>
+              <span class="home-episode-title">Luke Moulton: Creating a Life You Don’t Want to Escape</span>
+            </a>
+          </li>
+          <li>
+            <a class="home-episode" href="/episodes/podcast/nancy-dagostino-finding-yourself-after-putting-everyone-else-first/">
+              <img src="/assets/Nancy-DAgostino-Sept26-004.jpg" alt="Nancy D’Agostino" width="805" height="888" loading="lazy" />
+              <span class="home-episode-number">Episode 4</span>
+              <span class="home-episode-title">Nancy D’Agostino: Finding Yourself After Putting Everyone Else First</span>
+            </a>
+          </li>
+        </ul>
+        <p class="home-more-link"><a href="/episodes/podcast/">All episodes</a> · New here? <a href="/episodes/podcast/the-wake-up/">Start with The Wake-Up!</a></p>
+      </section>
+
+      <section class="home-guest" aria-labelledby="home-guest-title">
+        <p class="home-kicker">You’re invited</p>
+        <h2 id="home-guest-title">Everybody has a story</h2>
+        <p>
+          You don’t need to be famous or have climbed Mount Everest. If you’ve changed careers,
+          started over, raised a family or just found life didn’t turn out the way you imagined,
+          I’d love to have a chat. No scripts, no pressure — recorded remotely, about an hour.
+        </p>
+        <p class="home-actions">
+          <a class="home-button" href="https://cal.com/paulburfitt/im50-podcast-recording-with-paul-burfitt">Book your recording</a>
+          <a class="home-text-link" href="/guest/">How it works</a>
+        </p>
+      </section>
+
+      <section class="home-listen" aria-labelledby="home-listen-title">
+        <h2 id="home-listen-title">Listen on</h2>
+        <ul class="home-platforms">
+          <li><a href="https://podcasts.apple.com/podcast/id6815575028">Apple Podcasts</a></li>
+          <li><a href="https://open.spotify.com/show/0xSf2mujoCQBtROeKtca1D">Spotify</a></li>
+          <li><a href="https://music.amazon.com/podcasts/d1b9ae13-582a-4d23-b07a-9e763f72aea6">Amazon Music</a></li>
+          <li><a href="https://feeds.acast.com/public/shows/6ae9b0f6dc2860cef494e678">RSS</a></li>
+        </ul>
+      </section>
+    </main>
     <footer class="site-footer">
       <p class="site-footer-left">© 2026 • 64 Brands</p>
       <p class="site-footer-right"><a href="/privacy-terms/#privacy">Privacy</a> • <a href="/privacy-terms/#terms">Ts&amp;Cs</a></p>

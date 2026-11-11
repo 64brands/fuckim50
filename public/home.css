@@ -1,0 +1,228 @@
+/* The I’M 50! Show — homepage text sections (below the poster).
+   The poster stays exactly as approved and fills the first screen;
+   these sections follow it so the page has real, readable text. */
+
+/* Poster stages sit in the page flow, one screen tall, so the page can scroll. */
+.stage {
+  position: relative;
+  inset: auto;
+  height: 100dvh;
+  min-height: 100dvh;
+}
+
+.home-more {
+  --home-yellow: #fef603;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 56px calc(20px + env(safe-area-inset-right, 0px)) 24px
+    calc(20px + env(safe-area-inset-left, 0px));
+  color: #ffffff;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+  position: relative;
+  z-index: 2;
+}
+
+.home-more section {
+  max-width: 680px;
+  margin: 0 auto 64px;
+}
+
+.home-more .home-episodes {
+  max-width: none;
+}
+
+.home-kicker {
+  margin: 0 0 6px;
+  color: var(--home-yellow);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.home-title,
+.home-more h2 {
+  margin: 0 0 18px;
+  font-weight: 800;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+.home-title {
+  font-size: clamp(30px, 6vw, 44px);
+}
+
+.home-more h2 {
+  font-size: clamp(26px, 5vw, 34px);
+}
+
+.home-more p {
+  margin: 0 0 14px;
+}
+
+.home-lede {
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.home-more a {
+  color: #ffffff;
+  text-underline-offset: 3px;
+}
+
+.home-more a:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+/* Latest episodes */
+.home-episode-list {
+  list-style: none;
+  margin: 28px 0 24px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+.home-episode {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  column-gap: 20px;
+  align-items: center;
+  text-decoration: none;
+}
+
+.home-episode img {
+  grid-row: span 2;
+  width: 100%;
+  height: auto;
+  transform: rotate(-5deg);
+  box-shadow: 8px 10px 18px rgba(0, 0, 0, 0.28);
+}
+
+.home-episode-number {
+  align-self: end;
+  color: var(--home-yellow);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.home-episode-title {
+  align-self: start;
+  margin-top: 4px;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.home-episode:hover .home-episode-title {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.home-more-link {
+  font-weight: 600;
+}
+
+/* Guest invitation */
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+  margin-top: 22px !important;
+}
+
+.home-button {
+  display: inline-block;
+  padding: 13px 22px;
+  background: #ffffff;
+  color: #1a1a1a !important;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+.home-button:hover {
+  background: var(--home-yellow);
+}
+
+.home-text-link {
+  font-weight: 700;
+}
+
+/* Listen on */
+.home-listen h2 {
+  font-size: 22px;
+}
+
+.home-platforms {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.home-platforms a {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.home-platforms a:hover {
+  background: #ffffff;
+  color: #1a1a1a;
+}
+
+@media (min-width: 900px) {
+  .home-more {
+    padding-top: 88px;
+  }
+
+  .home-more section {
+    margin-bottom: 88px;
+  }
+
+  .home-episodes h2,
+  .home-episodes .home-kicker,
+  .home-more-link {
+    text-align: center;
+  }
+
+  .home-episode-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    margin: 40px 0 32px;
+  }
+
+  .home-episode {
+    grid-template-columns: 1fr;
+    row-gap: 6px;
+    align-items: start;
+  }
+
+  .home-episode img {
+    grid-row: auto;
+    width: 78%;
+    margin: 0 auto 22px;
+  }
+
+  .home-episode-number,
+  .home-episode-title {
+    text-align: center;
+  }
+}
